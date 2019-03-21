@@ -19,7 +19,6 @@ public class StarMap extends PApplet {
 
     public void loadData() {
         Table table = loadTable("HabHYG15ly.csv", "header");
-
         /*
          * for(int i = 0 ; i < table.getRowCount() ; i ++) { TableRow row =
          * table.getRow(i); System.out.println(row.getString("Display Name"));
@@ -37,6 +36,8 @@ public class StarMap extends PApplet {
         stroke(255, 0, 255);
         float border = width * 0.05f;
         textAlign(CENTER, CENTER);
+
+        //x axis is horizontal as in __
         for (float x = -5; x <= 5; x++) {
             float lx = map(x, -5, 5, border, width - border);
             line(lx, border, lx, height - border);
@@ -44,6 +45,7 @@ public class StarMap extends PApplet {
             text((int) x, lx, 10);
         }
 
+        //y axis is vertical as in |
         for (float y = -5; y <= 5; y++) {
             float ly = map(y, -5, 5, border, height - border);
             line(border, ly, width - border, ly);
