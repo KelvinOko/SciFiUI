@@ -33,6 +33,22 @@ public class Map extends PApplet
         stroke(128, 0, 128);
         line(200, 200, mouseX, mouseY);
         //println(mouseX, mouseY);
+
+        x = limitX1;
+        while (x < limitX2 + 40)
+        {
+          stroke(128, 0, 128);
+          line(x, limitY1, x, limitY2);
+          x = x + 40;
+        }
+      
+        y = limitY1;
+        while (y < limitY2 + 40)
+        {
+          stroke(128, 0, 128);
+          line(limitX1, y, limitX2, y);
+          y = y + 40;
+        }
     }
 
 }
