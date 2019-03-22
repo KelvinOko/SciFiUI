@@ -23,9 +23,16 @@ public class Main
         processing.core.PApplet.runSketch( a, new Map());
 		
 	}
+
+	public void ui()
+	{
+		String[] a = {"MAIN"};
+        processing.core.PApplet.runSketch( a, new UI());
+		
+	}
 	public static void main(String[] args)
 	{
 		Main main = new Main();
-		main.map();			
+		main.ui();			
 	}
 }

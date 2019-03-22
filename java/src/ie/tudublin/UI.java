@@ -6,6 +6,8 @@ public class UI extends PApplet
 {
     Button b;
     MovingCircle mc;
+    Circle circle;
+    Grid grid;
 
     boolean[] keys = new boolean[1024];
 
@@ -27,25 +29,23 @@ public class UI extends PApplet
 
     public void settings()
     {
-        size(800, 800);
+        size(1000, 600);
         // Use fullscreen instead of size to make your interface fullscreen
         //fullScreen(); 
     }
 
     public void setup()
     {
-        b = new Button(this, 50, 50, 100, 50, "I am a button");
-        mc = new MovingCircle(this, width / 2, height / 2, 50);
+        circle = new Circle(100, 0, this);
+        grid = new Grid(500, 150, 500, 150, 900, 550, 0, 0, this);
     }
 
     public void draw()
     {
+
         background(0);
-        b.render();
-
-        mc.update();
-        mc.render();
-
+        circle.drawCircle();
+        grid.drawGrid();
         if (checkKey(LEFT))
         {
             System.out.println("Left arrow key pressed");
