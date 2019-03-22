@@ -43,7 +43,7 @@ public class Map extends PApplet
         ellipse(220, 220, 400, 400);
 
         stroke(128, 0, 128);
-        line(200, 200, mouseX, mouseY);
+        line(220, 220, mouseX, mouseY);
         //println(mouseX, mouseY);
 
         x = limitX1;
@@ -52,9 +52,9 @@ public class Map extends PApplet
         {
             fill(255);
             textSize(15);
-            text(noOfTextS, x - 5, limitY1);
+            text(noOfTextS, x - 5, limitY1 - 15);
             stroke(128, 0, 128);
-            line(x, limitY1, x, limitY2);
+            line(x, limitY1 - 10, x, limitY2);
             x = x + 40;
             noOfTextS = noOfTextS + 1;
         }
@@ -65,9 +65,9 @@ public class Map extends PApplet
         {
             fill(255);
             textSize(15);
-            text(noOfTextD, limitX1 - 10, y + 7);
+            text(noOfTextD, limitX1 - 25, y + 7);
             stroke(128, 0, 128);
-            line(limitX1, y, limitX2, y);
+            line(limitX1 - 10, y, limitX2, y);
             y = y + 40;
             noOfTextD = noOfTextD + 1;
         }
