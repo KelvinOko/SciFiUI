@@ -19,11 +19,10 @@ public class Map extends PApplet
         
         stroke(128, 0, 128);
         fill(50, 150);
-        ellipse(width/2, height/2, 350, 350);
-        
-        
+        ellipse(200, 200, 350, 350);
+
         stroke(128, 0, 128);
-        line(width/2, height/2, mouseX, mouseY);
+        line(200, 200, mouseX, mouseY);
         //println(mouseX, mouseY);
     }
 
