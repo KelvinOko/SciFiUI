@@ -27,9 +27,5 @@ public class Map extends PApplet
         //println(mouseX, mouseY);
     }
 
-    public void keyPressed()
-    {
-    
-    }
 }
 
