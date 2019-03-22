@@ -22,6 +22,8 @@ public class Map extends PApplet
     int limitY2 = 550;
     int noOfCircles;
     int currCircles;
+    int noOfTextS;
+    int noOfTextD;
     public void draw()
     {
         background(0);
