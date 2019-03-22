@@ -25,7 +25,17 @@ public class Map extends PApplet
     public void draw()
     {
         background(0);
-        
+
+        noOfCircles = 100;
+        currCircles = 0;
+        while (currCircles <= noOfCircles)
+        {
+            stroke(255, 255, 204);
+            fill(255, 255, 204);
+            ellipse(random(0,1000), random(0,600), 2, 2);
+            currCircles = currCircles + 1;
+        }
+
         stroke(128, 0, 128);
         fill(50, 150);
         ellipse(200, 200, 350, 350);
@@ -37,17 +47,17 @@ public class Map extends PApplet
         x = limitX1;
         while (x < limitX2 + 40)
         {
-          stroke(128, 0, 128);
-          line(x, limitY1, x, limitY2);
-          x = x + 40;
+            stroke(128, 0, 128);
+            line(x, limitY1, x, limitY2);
+            x = x + 40;
         }
-      
+
         y = limitY1;
         while (y < limitY2 + 40)
         {
-          stroke(128, 0, 128);
-          line(limitX1, y, limitX2, y);
-          y = y + 40;
+            stroke(128, 0, 128);
+            line(limitX1, y, limitX2, y);
+            y = y + 40;
         }
     }
 
