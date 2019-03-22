@@ -38,7 +38,7 @@ public class Map extends PApplet
 
         stroke(128, 0, 128);
         fill(50, 150);
-        ellipse(200, 200, 400, 400);
+        ellipse(220, 220, 400, 400);
 
         stroke(128, 0, 128);
         line(200, 200, mouseX, mouseY);
