@@ -29,9 +29,15 @@ public class Circle{
         ui.stroke(128, 0, 128);
         ui.fill(50, 150);
         ui.ellipse(220, 220, 400, 400);
+        ui.noFill();
+        ui.ellipse(220, 220, 320, 320);
+        ui.ellipse(220, 220, 220, 220);
+        ui.ellipse(220, 220, 120, 120);
 
         ui.stroke(128, 0, 128);
-        ui.line(220, 220, ui.mouseX, ui.mouseY);
+        //ui.line(220, 220, ui.mouseX, ui.mouseY);
+        ui.line(220, 20, 220, 420);
+        ui.line(20, 220, 420, 220);
         //println(mouseX, mouseY);
 
         }

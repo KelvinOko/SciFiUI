@@ -7,6 +7,7 @@ public class UI extends PApplet
     Button b;
     MovingCircle mc;
     Circle circle;
+    Radar radar;
     Grid grid;
 
     boolean[] keys = new boolean[1024];
@@ -38,6 +39,7 @@ public class UI extends PApplet
     {
         circle = new Circle(100, 0, this);
         grid = new Grid(500, 150, 500, 150, 900, 550, 0, 0, this);
+        radar = new Radar(this, 220, 220, 400);
     }
 
     public void draw()
@@ -46,6 +48,8 @@ public class UI extends PApplet
         background(0);
         circle.drawCircle();
         grid.drawGrid();
+        radar.render();
+        radar.update();
         if (checkKey(LEFT))
         {
             System.out.println("Left arrow key pressed");
