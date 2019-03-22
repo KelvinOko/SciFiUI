@@ -17,7 +17,7 @@ public class Map extends PApplet
     int x;
     int y;
     int limitX1 = 500;
-    int limitY1 = 230;
+    int limitY1 = 150;
     int limitX2 = 900;
     int limitY2 = 550;
     int noOfCircles;
@@ -38,7 +38,7 @@ public class Map extends PApplet
 
         stroke(128, 0, 128);
         fill(50, 150);
-        ellipse(200, 200, 350, 350);
+        ellipse(200, 200, 400, 400);
 
         stroke(128, 0, 128);
         line(200, 200, mouseX, mouseY);
