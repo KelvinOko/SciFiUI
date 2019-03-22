@@ -13,6 +13,15 @@ public class Map extends PApplet
     {
         
     }
+
+    int x;
+    int y;
+    int limitX1 = 500;
+    int limitY1 = 230;
+    int limitX2 = 900;
+    int limitY2 = 550;
+    int noOfCircles;
+    int currCircles;
     public void draw()
     {
         background(0);
