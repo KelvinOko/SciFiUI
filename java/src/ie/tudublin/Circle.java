@@ -27,8 +27,6 @@ public class Circle{
         }
 
         ui.stroke(128, 0, 128);
-        ui.fill(50, 150);
-        ui.ellipse(220, 220, 400, 400);
         ui.noFill();
         ui.ellipse(220, 220, 320, 320);
         ui.ellipse(220, 220, 220, 220);

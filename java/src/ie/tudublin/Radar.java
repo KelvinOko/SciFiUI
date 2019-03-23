@@ -28,16 +28,15 @@ public class Radar
     public void render()
     {
         
-
+        //big outer circle
         ui.stroke(128, 0, 128);
-        ui.fill(50, 0);
+        ui.fill(50, 150);
         ui.translate(pos.x, pos.y);
         ui.ellipse(x, y, diameter, diameter);
+        //rotating line
         ui.fill(255);
-       // ui.translate(pos.x, pos.y);
         ui.rotate(rotation);
         ui.line(x , y , x - radius  , y - radius );
-        ui.fill(255);
     }
 
     public void update()
