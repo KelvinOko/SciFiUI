@@ -1,6 +1,6 @@
 package ie.tudublin;
 
-import processing.core.PApplet;
+//import processing.core.PApplet;
 import processing.core.PVector;
 
 public class Radar
@@ -32,6 +32,7 @@ public class Radar
         ui.stroke(128, 0, 128);
         ui.fill(50, 150);
         ui.translate(pos.x, pos.y);
+        ui.strokeWeight(2);
         ui.ellipse(x, y, diameter, diameter);
         //rotating line
         ui.fill(255);
