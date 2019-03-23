@@ -33,7 +33,7 @@ public class Grid
     {
 
         x = limitX1;
-        noOfTextS = 0;
+        noOfTextS = -5;
         while (x < limitX2 + 40)
         {
             ui.fill(255);
@@ -46,7 +46,7 @@ public class Grid
         }
 
         y = limitY1;
-        noOfTextD = 0;
+        noOfTextD = -5;
         while (y < limitY2 + 40)
         {
             ui.fill(255);
