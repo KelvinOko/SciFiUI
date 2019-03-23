@@ -5,7 +5,6 @@ import processing.core.PApplet;
 public class UI extends PApplet
 {
     Button b;
-    MovingCircle mc;
     Circle circle;
     Radar radar;
     Grid grid;
