@@ -17,13 +17,6 @@ public class Main
 		
 	}
 
-	public void map()
-	{
-		String[] a = {"MAIN"};
-        processing.core.PApplet.runSketch( a, new Map());
-		
-	}
-
 	public void ui()
 	{
 		String[] a = {"MAIN"};
