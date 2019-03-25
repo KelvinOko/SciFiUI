@@ -36,7 +36,7 @@ public class UI extends PApplet
 
     public void setup()
     {
-        circle = new Circle(100, 0, this);
+        circle = new Circle(100, this);
         grid = new Grid(500, 150, 500, 150, 900, 550, 0, 0, this);
         radar = new Radar(this, 220, 220, 400);
     }
