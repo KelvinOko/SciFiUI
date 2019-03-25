@@ -4,7 +4,6 @@ import processing.core.PApplet;
 
 public class Circle{
     int noOfCircles;
-    int currCircles;
     PApplet ui;
 
     public Circle(int noOfCircles, PApplet ui)
@@ -22,7 +21,6 @@ public class Circle{
             ui.ellipse(ui.random(0,1000), ui.random(0,600), 2, 2);
         }
 
-
         ui.stroke(128, 0, 128);
         ui.noFill();
         ui.ellipse(220, 220, 320, 320);
@@ -31,8 +29,8 @@ public class Circle{
 
         ui.stroke(128, 0, 128);
         //ui.line(220, 220, ui.mouseX, ui.mouseY);
-        ui.line(220, 20, 220, 420);
-        ui.line(20, 220, 420, 220);
+        ui.line(220, 10, 220, 430);
+        ui.line(10, 220, 430, 220);
         //println(mouseX, mouseY);
 
         }

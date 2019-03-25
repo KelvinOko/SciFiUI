@@ -20,7 +20,7 @@ public class Radar
         this.x = x;
         this.y = y;
         this.diameter = diameter;
-        radius = (diameter / 2) - 58;
+        radius = (diameter / 2) - 62;
         pos = new PVector(x, y);
         
     }
@@ -30,7 +30,7 @@ public class Radar
         
         //big outer circle
         ui.stroke(128, 0, 128);
-        ui.fill(50, 150);
+        ui.fill(50, 50);
         ui.translate(pos.x, pos.y);
         ui.strokeWeight(2);
         ui.ellipse(x, y, diameter, diameter);

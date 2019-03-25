@@ -4,7 +4,7 @@ import processing.core.PApplet;
 
 public class UI extends PApplet
 {
-    Button b;
+   
     Circle circle;
     Radar radar;
     Grid grid;
@@ -38,7 +38,7 @@ public class UI extends PApplet
     {
         circle = new Circle(100, this);
         grid = new Grid(500, 150, 500, 150, 900, 550, 0, 0, this);
-        radar = new Radar(this, 220, 220, 400);
+        radar = new Radar(this, 220, 220, 420);
     }
 
     public void draw()
