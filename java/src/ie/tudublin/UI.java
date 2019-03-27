@@ -1,5 +1,7 @@
 package ie.tudublin;
 
+import java.util.ArrayList;
+
 import processing.core.PApplet;
 
 public class UI extends PApplet
@@ -9,8 +11,6 @@ public class UI extends PApplet
     Radar radar;
     Grid grid;
     SolarSystem sys1;
-    //for planets
-    //Planet[] planet = new Planet[8];
 
     boolean[] keys = new boolean[1024];
 
@@ -32,22 +32,30 @@ public class UI extends PApplet
 
     public void settings()
     {
-        size(1000, 600);
+        size(1200, 700);
         // Use fullscreen instead of size to make your interface fullscreen
         //fullScreen(); 
     }
 
+    ArrayList<Planet> planets = new ArrayList<>();
+
     public void setup()
     {
-        circle = new Circle(100, this);
-        radar = new Radar(this, 220, 220, 420);
+        circle = new Circle(200, this);
+        radar = new Radar(this, 280, 280, 460);
         grid = new Grid(500, 150, 500, 150, 900, 550, 0, 0, this);
         sys1 = new SolarSystem(this);
-        //for planets
-        // for(int i = 0; i < planet.length; i++)
-        // {
-        //     planet[i] = new Planet(200, 200, 50, 50, 5, 6, 7, 255, this);
-        // }
+
+        planets.add(new Planet(280, 280, 100, 100, 255, 150, 0, 255, this));//sun
+        planets.add(new Planet(340, 280, 20, 20, 204, 102, 0, 255, this));//mercury
+        planets.add(new Planet(342, 240, 25, 25, 255, 102, 0, 255, this));//venus
+        planets.add(new Planet(208, 213, 40, 40, 0, 0, 190, 255, this));//earth
+        planets.add(new Planet(372, 360, 32, 32, 255, 51,0, 255, this));//mars
+        planets.add(new Planet(180, 390, 52, 52, 255, 204, 102, 255, this));//jupiter
+        planets.add(new Planet(430, 180, 43, 43, 255, 204, 102, 255, this));//
+        planets.add(new Planet(290, 130, 41, 41, 40, 204, 240, 255, this));
+        planets.add(new Planet(84, 260, 41, 41, 0, 102, 204, 255, this));
+        
 
     }
 
@@ -55,14 +63,14 @@ public class UI extends PApplet
     {
 
         background(0);
+        for(int i = 0; i < planets.size(); i++)
+        {
+            planets.get(i).drawPlanet();
+        }
+        //sys1.drawSolarSystem();
         circle.drawCircle();
-        grid.drawGrid();
-        sys1.drawSolarSystem();
-        //for planets
-        // for(int i = 0; i < planet.length; i++)
-        // {
-        //     planet[i].drawPlanet();
-        // }
+        //grid.drawGrid();
+        
         radar.render();
         radar.update();
 
@@ -70,6 +78,8 @@ public class UI extends PApplet
         {
             System.out.println("Left arrow key pressed");
         }
+
+        
     }
 }
 

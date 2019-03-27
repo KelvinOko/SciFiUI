@@ -11,6 +11,7 @@ public class SolarSystem
         this.ui = ui;
     }
 
+
     public void drawSolarSystem()
     {
         ui.stroke(255, 100);
@@ -29,6 +30,30 @@ public class SolarSystem
         //earth
         ui.fill(0, 0, 190);
         ui.ellipse(155, 160, 40, 40);
+        //land1
+        ui.fill(0, 255, 0);
+        ui.noStroke();
+        ui.ellipse(162, 160, 15, 10);
+        ui.triangle(160, 162, 164, 172, 169, 162);
+        //land2
+        ui.fill(0, 255, 0);
+        ui.noStroke();
+        ui.ellipse(147, 154, 15, 10);
+        ui.triangle(139, 156, 148, 162, 154, 156);
+        //cloud1
+        ui.fill(255);
+        ui.ellipse(160, 155, 5, 5);
+        ui.ellipse(163, 153, 5, 5);
+        ui.ellipse(162, 158, 5, 5);
+        ui.ellipse(158, 152, 5, 5);
+        ui.ellipse(158, 158, 5, 5);
+        //cloud2
+        ui.fill(255);
+        ui.ellipse(148, 166, 5, 5);
+        ui.ellipse(152, 164, 5, 5);
+        ui.ellipse(150, 169, 5, 5);
+        ui.ellipse(146, 164, 5, 5);
+        ui.ellipse(146, 169, 5, 5);
         
         //mars
         ui.fill(255, 51,0);

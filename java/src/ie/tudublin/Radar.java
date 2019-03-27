@@ -20,14 +20,14 @@ public class Radar
         this.x = x;
         this.y = y;
         this.diameter = diameter;
-        radius = (diameter / 2) - 62;
+        radius = (diameter / 2) - 68;
         pos = new PVector(x, y);
         
     }
 
     public void render()
     {
-        
+        ui.pushMatrix();
         //big outer circle
         ui.stroke(128, 0, 128);
         ui.fill(50, 50);
@@ -38,6 +38,7 @@ public class Radar
         ui.fill(255);
         ui.rotate(rotation);
         ui.line(x , y , x - radius  , y - radius );
+        ui.popMatrix();
     }
 
     public void update()

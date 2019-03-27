@@ -18,20 +18,22 @@ public class Circle{
         {
             ui.stroke(255, 255, 204);
             ui.fill(255, 255, 204);
-            ui.ellipse(ui.random(0,1000), ui.random(0,600), 2, 2);
+            ui.ellipse(ui.random(0,1400), ui.random(0,700), 2, 2);
         }
 
         ui.stroke(128, 0, 128);
         ui.noFill();
-        ui.ellipse(220, 220, 320, 320);
-        ui.ellipse(220, 220, 220, 220);
-        ui.ellipse(220, 220, 120, 120);
+        ui.ellipse(280, 280, 120, 120);//m
+        ui.ellipse(280, 280, 148, 148);//v
+        ui.ellipse(280, 280, 195, 195);//e
+        ui.ellipse(280, 280, 245, 245);//m
+        ui.ellipse(280, 280, 295, 295);//j
+        ui.ellipse(280, 280, 315, 315);//s
+        ui.ellipse(280, 280, 245, 245);//u
 
         ui.stroke(128, 0, 128);
-        //ui.line(220, 220, ui.mouseX, ui.mouseY);
-        ui.line(220, 10, 220, 430);
-        ui.line(10, 220, 430, 220);
-        //println(mouseX, mouseY);
+        ui.line(280, 50, 280, 510);
+        ui.line(50, 280, 510, 280);
 
         }
 }
