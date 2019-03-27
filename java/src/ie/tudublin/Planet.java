@@ -29,6 +29,7 @@ public class Planet
 
     public void drawPlanet()
     {
+        ui.stroke(255, 100);
         ui.fill(c1, c2, c3, a);
         ui.ellipse(x, y, s1, s2);
     }
