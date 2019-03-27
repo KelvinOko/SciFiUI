@@ -42,7 +42,7 @@ public class UI extends PApplet
         circle = new Circle(100, this);
         radar = new Radar(this, 220, 220, 420);
         grid = new Grid(500, 150, 500, 150, 900, 550, 0, 0, this);
-        sys1 = new SolarSystem(4, 4, 4, /*w*/99, 314, 150, 314, /*b*/111, 297, 138, 297, /*lb*/100, 320, 149, 320, this);
+        sys1 = new SolarSystem(this);
         //for planets
         // for(int i = 0; i < planet.length; i++)
         // {
