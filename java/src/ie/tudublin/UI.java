@@ -42,19 +42,19 @@ public class UI extends PApplet
     public void setup()
     {
         circle = new Circle(200, this);
-        radar = new Radar(this, 320, 320, 500);
+        radar = new Radar(this, 310, 310, 530);
         grid = new Grid(500, 150, 500, 150, 900, 550, 0, 0, this);
         sys1 = new SolarSystem(this);
 
-        planets.add(new Planet(320, 320, 100, 100, 255, 150, 0, 255, this));//sun
-        planets.add(new Planet(380, 320, 20, 20, 204, 102, 0, 255, this));//mercury
-        planets.add(new Planet(382, 280, 25, 25, 255, 102, 0, 255, this));//venus
-        planets.add(new Planet(248, 253, 40, 40, 0, 0, 190, 255, this));//earth
-        planets.add(new Planet(412, 400, 32, 32, 255, 51,0, 255, this));//mars
-        planets.add(new Planet(220, 430, 52, 52, 255, 204, 102, 255, this));//jupiter
-        planets.add(new Planet(455, 225, 43, 43, 255, 204, 102, 255, this));//saturn
-        planets.add(new Planet(330, 170, 41, 41, 40, 204, 240, 255, this));//uranus
-        planets.add(new Planet(124, 300, 41, 41, 0, 102, 204, 255, this));//neptune
+        planets.add(new Planet(310, 310, 100, 100, 255, 150, 0, 255, this));//sun
+        planets.add(new Planet(370, 310, 20, 20, 204, 102, 0, 255, this));//mercury
+        planets.add(new Planet(376, 260, 33, 33, 255, 102, 0, 255, this));//venus
+        planets.add(new Planet(230, 235, 40, 40, 0, 0, 190, 255, this));//earth
+        planets.add(new Planet(426, 380, 25, 25, 255, 51, 0, 255, this));//mars
+        planets.add(new Planet(202, 435, 75, 75, 255, 204, 102, 255, this));//jupiter
+        planets.add(new Planet(465, 205, 65, 65, 255, 204, 102, 255, this));//saturn
+        planets.add(new Planet(320, 90, 55, 55, 40, 204, 240, 255, this));//uranus
+        planets.add(new Planet(45, 290, 50, 50, 0, 102, 204, 255, this));//neptune
         
 
     }
@@ -66,6 +66,7 @@ public class UI extends PApplet
         for(int i = 0; i < planets.size(); i++)
         {
             planets.get(i).drawPlanet();
+            println(i);
         }
         //sys1.drawSolarSystem();
         circle.drawCircle();

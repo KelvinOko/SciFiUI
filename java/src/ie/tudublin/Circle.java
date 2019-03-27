@@ -23,17 +23,17 @@ public class Circle{
 
         ui.stroke(128, 0, 128);
         ui.noFill();
-        ui.ellipse(280, 280, 120, 120);//m
-        ui.ellipse(280, 280, 148, 148);//v
-        ui.ellipse(280, 280, 195, 195);//e
-        ui.ellipse(280, 280, 245, 245);//m
-        ui.ellipse(280, 280, 295, 295);//j
-        ui.ellipse(280, 280, 315, 315);//s
-        ui.ellipse(280, 280, 245, 245);//u
+        ui.ellipse(310, 310, 120, 120);//m
+        ui.ellipse(310, 310, 168, 168);//v
+        ui.ellipse(310, 310, 220, 220);//e
+        ui.ellipse(310, 310, 270, 270);//m
+        ui.ellipse(310, 310, 330, 330);//j
+        ui.ellipse(310, 310, 385, 385);//s
+        ui.ellipse(310, 310, 445, 445);//u
 
         ui.stroke(128, 0, 128);
-        ui.line(280, 50, 280, 510);
-        ui.line(50, 280, 510, 280);
+        ui.line(310, 45, 310, 575);//vertical
+        ui.line(45, 310, 575, 310);//horizontal
 
         }
 }
