@@ -20,7 +20,7 @@ public class Radar
         this.x = x;
         this.y = y;
         this.diameter = diameter;
-        radius = (diameter / 2) - 68;
+        radius = (diameter / 2) - 78;
         pos = new PVector(x, y);
         
     }

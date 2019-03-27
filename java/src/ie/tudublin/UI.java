@@ -7,6 +7,7 @@ import processing.core.PApplet;
 public class UI extends PApplet
 {
     ArrayList<Circles> circles = new ArrayList<>();
+    ArrayList<Lines> lines = new ArrayList<>();
     Stars stars;
     Radar radar;
     Grid grid;
@@ -48,6 +49,9 @@ public class UI extends PApplet
         circles.add(new Circles(310, 310, 385, 385, this));
         circles.add(new Circles(310, 310, 445, 445, this));
 
+        lines.add(new Lines(310, 45, 310, 575, this));//vertical
+        lines.add(new Lines(45, 310, 575, 310, this));//horizontal
+
         stars = new Stars(200, this);
         radar = new Radar(this, 310, 310, 530);
         grid = new Grid(700, 150, 1100, 550, 0, 0, this);
@@ -72,6 +76,11 @@ public class UI extends PApplet
         for(int c = 0; c < circles.size(); c++)
         {
             circles.get(c).drawCircles();
+        }
+
+        for(int l = 0; l < lines.size(); l++)
+        {
+            lines.get(l).drawLines();
         }
 
         stars.drawStars();
