@@ -50,7 +50,7 @@ public class UI extends PApplet
 
         stars = new Stars(200, this);
         radar = new Radar(this, 310, 310, 530);
-        grid = new Grid(500, 150, 500, 150, 900, 550, 0, 0, this);
+        grid = new Grid(700, 150, 1100, 550, 0, 0, this);
 
         planets.add(new Planet(310, 310, 100, 100, 255, 150, 0, 255, this));//sun
         planets.add(new Planet(370, 310, 20, 20, 204, 102, 0, 255, this));//mercury
@@ -79,7 +79,7 @@ public class UI extends PApplet
         radar.render();
         radar.update();
 
-        //grid.drawGrid();
+        grid.drawGrid();
 
         for(int i = 0; i < planets.size(); i++)
         {

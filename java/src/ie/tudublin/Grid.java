@@ -4,8 +4,6 @@ import processing.core.PApplet;
 
 public class Grid
 {
-    int x;
-    int y;
     int limitX1 = 500;
     int limitY1 = 150;
     int limitX2 = 900;
@@ -14,12 +12,10 @@ public class Grid
     int noOfTextD;
     PApplet ui;
 
-    public Grid(int x, int y, int limitX1, int limitY1, 
+    public Grid(int limitX1, int limitY1, 
     int limitX2, int limitY2, int noOfTextS,
     int noOfTextD, PApplet ui)
-    {
-        this.x = x; 
-        this.y = y; 
+    { 
         this.limitX1 = limitX1;
         this.limitY1 = limitY1; 
         this.limitX2 = limitX2; 
@@ -32,7 +28,7 @@ public class Grid
     public void drawGrid()
     {
 
-        x = limitX1;
+        int x = limitX1;
         noOfTextS = -5;
         while (x < limitX2 + 40)
         {
@@ -45,7 +41,7 @@ public class Grid
             noOfTextS = noOfTextS + 1;
         }
 
-        y = limitY1;
+        int y = limitY1;
         noOfTextD = -5;
         while (y < limitY2 + 40)
         {
