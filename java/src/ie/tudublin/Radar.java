@@ -32,7 +32,7 @@ public class Radar
         ui.stroke(128, 0, 128);
         ui.fill(50, 50);
         ui.translate(pos.x, pos.y);
-        ui.strokeWeight(2);
+        //ui.strokeWeight(2);
         ui.ellipse(x, y, diameter, diameter);
         //rotating line
         ui.fill(255);
@@ -44,7 +44,7 @@ public class Radar
     {
         this.x = (float) Math.sin(rotation);
         this.y = - (float) Math.cos(rotation);
-        rotation += 0.01f; 
+        rotation += 0.03f; 
     }
 
     /**
