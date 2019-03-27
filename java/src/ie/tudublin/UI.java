@@ -10,7 +10,7 @@ public class UI extends PApplet
     Circle circle;
     Radar radar;
     Grid grid;
-    SolarSystem sys1;
+    ArrayList<Planet> planets = new ArrayList<>();
 
     boolean[] keys = new boolean[1024];
 
@@ -37,14 +37,12 @@ public class UI extends PApplet
         //fullScreen(); 
     }
 
-    ArrayList<Planet> planets = new ArrayList<>();
 
     public void setup()
     {
         circle = new Circle(200, this);
         radar = new Radar(this, 310, 310, 530);
         grid = new Grid(500, 150, 500, 150, 900, 550, 0, 0, this);
-        sys1 = new SolarSystem(this);
 
         planets.add(new Planet(310, 310, 100, 100, 255, 150, 0, 255, this));//sun
         planets.add(new Planet(370, 310, 20, 20, 204, 102, 0, 255, this));//mercury
@@ -63,17 +61,19 @@ public class UI extends PApplet
     {
 
         background(0);
+        circle.drawCircle();
+
+        radar.render();
+        radar.update();
+
+        //grid.drawGrid();
+
         for(int i = 0; i < planets.size(); i++)
         {
             planets.get(i).drawPlanet();
             println(i);
         }
-        //sys1.drawSolarSystem();
-        circle.drawCircle();
-        //grid.drawGrid();
         
-        radar.render();
-        radar.update();
 
         if (checkKey(LEFT))
         {
