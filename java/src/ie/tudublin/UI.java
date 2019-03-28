@@ -12,6 +12,7 @@ public class UI extends PApplet
     Radar radar;
     Grid grid;
     ArrayList<Planet> planets = new ArrayList<>();
+    ArrayList<PlanetLines> planetLines = new ArrayList<>();
 
     boolean[] keys = new boolean[1024];
 
@@ -49,8 +50,25 @@ public class UI extends PApplet
         circles.add(new Circles(310, 310, 385, 385, this));
         circles.add(new Circles(310, 310, 445, 445, this));
 
+        //radar lines
         lines.add(new Lines(310, 45, 310, 575, this));//vertical
         lines.add(new Lines(45, 310, 575, 310, this));//horizontal
+
+        //jupiter lines
+        planetLines.add(new PlanetLines(187, 400, 217, 400, 190, 101, 0, 255, this));//1
+        planetLines.add(new PlanetLines(179, 405, 225, 405, 240, 153, 51, 255, this));//2
+        planetLines.add(new PlanetLines(169, 415, 234, 415, 255, 255, 255, 100, this));//3
+        planetLines.add(new PlanetLines(167, 420, 236, 420, 190, 101, 0, 255, this));//4
+        planetLines.add(new PlanetLines(165, 425, 238, 425, 255, 255, 255, 100, this));//5
+        planetLines.add(new PlanetLines(164, 430, 237, 430, 190, 101, 0, 255, this));//6
+        planetLines.add(new PlanetLines(164, 435, 237, 435, 255, 255, 255, 100, this));//7
+        planetLines.add(new PlanetLines(165, 440, 238, 440, 240, 153, 51, 255, this));//8
+        planetLines.add(new PlanetLines(166, 445, 238, 445, 255, 255, 255, 100, this));//9
+        planetLines.add(new PlanetLines(168, 451, 236, 451, 255, 154, 51, 255, this));//10
+        planetLines.add(new PlanetLines(171, 456, 233, 456, 255, 255, 255, 100, this));//11
+        planetLines.add(new PlanetLines(174, 460, 229, 460, 240, 153, 51, 255, this));//12
+        planetLines.add(new PlanetLines(180, 465, 224, 465, 255, 255, 255, 100, this));//13
+        planetLines.add(new PlanetLines(189, 470, 215, 470, 240, 153, 51, 255, this));//14
 
         stars = new Stars(200, this);
         radar = new Radar(this, 310, 310, 530);
@@ -73,6 +91,10 @@ public class UI extends PApplet
     {
 
         background(0);
+        // stroke(255);
+        // line(200, 300, mouseX, mouseY);
+        // println(mouseX, mouseY);
+
         for(int c = 0; c < circles.size(); c++)
         {
             circles.get(c).drawCircles();
@@ -90,9 +112,15 @@ public class UI extends PApplet
 
         grid.drawGrid();
 
+
         for(int i = 0; i < planets.size(); i++)
         {
             planets.get(i).drawPlanet();
+        }
+
+        for(int pl = 0; pl < planetLines.size(); pl++)
+        {
+            planetLines.get(pl).drawPlanetLines();
         }
         
 
