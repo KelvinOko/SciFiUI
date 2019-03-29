@@ -76,7 +76,7 @@ public class UI extends PApplet
         planetLines.add(new PlanetLines(-160, -60, -160, -145, 255, 255, 255, 100, 0.0082f, this));
 
         //uranus line
-        planetLines.add(new PlanetLines(289, 104, 350, 77, 255, 255, 255, 30, 0.0079f, this));
+        planetLines.add(new PlanetLines(175, 64, 235, 110, 255, 255, 255, 30, 0.0079f, this));
 
         stars = new Stars(200, this);
         radar = new Radar(this, 310, 310, 530);
@@ -127,10 +127,6 @@ public class UI extends PApplet
             planets.get(i).drawPlanet();
         }
 
-        // for(int u = 0; u < planets.size(); u++)
-        // {
-        //     planets.get(u).updatePlanet();
-        // }
 
         for(int pl = 0; pl < planetLines.size(); pl++)
         {

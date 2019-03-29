@@ -42,10 +42,4 @@ public class Planet
         rotation += r; 
     }
 
-    // public void updatePlanet()
-    // {
-    //     this.x = (float) Math.sin(rotation);
-    //     this.y = - (float) Math.cos(rotation);
-    // }
-
 }
