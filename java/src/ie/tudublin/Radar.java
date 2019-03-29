@@ -32,6 +32,7 @@ public class Radar
         ui.stroke(128, 0, 128);
         ui.fill(50, 50);
         ui.translate(pos.x, pos.y);
+        //ui.println(pos.x, pos.y);
         //ui.strokeWeight(2);
         ui.ellipse(x, y, diameter, diameter);
         //rotating line
