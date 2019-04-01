@@ -21,17 +21,17 @@ public class Additions{
         ui.rotate(rotation);
         ui.fill(0, 255, 0);
         ui.noStroke();
-        ui.ellipse(237, 233, 15, 10);
-        ui.triangle(233, 235, 241, 250, 244, 235);
+        ui.ellipse(-73, -77, 15, 10);
+        ui.triangle(-77, -75, -69, -60, -66, -75);
         //land2
         ui.fill(0, 255, 0);
         ui.noStroke();
-        ui.ellipse(220, 230, 15, 10);
-        ui.triangle(214, 232, 225, 240, 227, 232);
+        ui.ellipse(-90, -80, 15, 10);
+        ui.triangle(-96, -78, -85, -70, -83, -78);
         //land3
         ui.fill(0, 255, 0);
         ui.noStroke();
-        ui.ellipse(226, 246, 15, 10);
+        ui.ellipse(-84, -64, 15, 10);
         ui.popMatrix();
         rotation += r;
         // //cloud1
