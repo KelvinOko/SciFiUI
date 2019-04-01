@@ -3,11 +3,12 @@ package ie.tudublin;
 import processing.core.PApplet;
 
 public class Additions{
-    
+    float rotation, r;
     PApplet ui;
 
-    public Additions(PApplet ui)
+    public Additions(float r, PApplet ui)
     {
+        this.r = r;
         this.ui = ui;
     }
 
@@ -15,6 +16,9 @@ public class Additions{
     {
         //earth
         //land1
+        ui.pushMatrix();
+        ui.translate(310, 310);
+        ui.rotate(rotation);
         ui.fill(0, 255, 0);
         ui.noStroke();
         ui.ellipse(237, 233, 15, 10);
@@ -28,6 +32,8 @@ public class Additions{
         ui.fill(0, 255, 0);
         ui.noStroke();
         ui.ellipse(226, 246, 15, 10);
+        ui.popMatrix();
+        rotation += r;
         // //cloud1
         // ui.fill(255);
         // ui.ellipse(160, 155, 5, 5);
