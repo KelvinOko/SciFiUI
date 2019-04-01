@@ -56,6 +56,17 @@ public class UI extends PApplet
         lines.add(new Lines(310, 45, 310, 575, this));//vertical
         lines.add(new Lines(45, 310, 575, 310, this));//horizontal
 
+        stars = new Stars(200, this);
+        radar = new Radar(this, 310, 310, 530);
+        grid = new Grid(700, 150, 1100, 550, 0, 0, this);
+
+        planets.add(new Planet(0, 0, 100, 100, 231, 116, 0, 255, 0, this));//sun
+        planets.add(new Planet(60, 0, 20, 20, 153, 153, 102, 255, 0.06f, this));//mercury
+        planets.add(new Planet(66, -50, 33, 33, 255, 204, 0, 255, 0.02f, this));//venus
+        planets.add(new Planet(-80, -75, 40, 40, 0, 0, 190, 255, 0.017f, this));//earth
+        planets.add(new Planet(116, 70, 25, 25, 204, 51, 0, 255, 0.015f, this));//mars
+
+        planets.add(new Planet(-108, 125, 75, 75, 255, 204, 102, 255, 0.009f, this));//jupiter
         //jupiter lines
         planetLines.add(new PlanetLines(-123, 90, -93, 90, 190, 101, 0, 255, 0.009f, this));//1
         planetLines.add(new PlanetLines(-131, 95, -85, 95, 240, 153, 51, 255, 0.009f, this));//2
@@ -72,25 +83,15 @@ public class UI extends PApplet
         planetLines.add(new PlanetLines(-136, 150, -81, 150, 240, 153, 51, 255, 0.009f, this));//12
         planetLines.add(new PlanetLines(-130, 155, -86, 155, 255, 255, 255, 100, 0.009f, this));//13
         planetLines.add(new PlanetLines(-121, 160, -95, 160, 240, 153, 51, 255, 0.009f, this));//14
-
+        
+        planets.add(new Planet(155, -105, 65, 65, 255, 204, 51, 255, 0.0082f, this));//saturn
         //saturn line
         planetLines.add(new PlanetLines(117, -82, 190, -128, 255, 255, 255, 100,  0.0082f, this));
 
+        planets.add(new Planet(20, -220, 55, 55, 153, 204, 255, 255, 0.0079f, this));//uranus
         //uranus line
         planetLines.add(new PlanetLines(-14, -206, 53, -233, 255, 255, 255, 50, 0.0079f, this));
-
-        stars = new Stars(200, this);
-        radar = new Radar(this, 310, 310, 530);
-        grid = new Grid(700, 150, 1100, 550, 0, 0, this);
-
-        planets.add(new Planet(0, 0, 100, 100, 231, 116, 0, 255, 0, this));//sun
-        planets.add(new Planet(60, 0, 20, 20, 153, 153, 102, 255, 0.06f, this));//mercury
-        planets.add(new Planet(66, -50, 33, 33, 255, 204, 0, 255, 0.02f, this));//venus
-        planets.add(new Planet(-80, -75, 40, 40, 0, 0, 190, 255, 0.017f, this));//earth
-        planets.add(new Planet(116, 70, 25, 25, 204, 51, 0, 255, 0.015f, this));//mars
-        planets.add(new Planet(-108, 125, 75, 75, 255, 204, 102, 255, 0.009f, this));//jupiter
-        planets.add(new Planet(155, -105, 65, 65, 255, 204, 51, 255, 0.0082f, this));//saturn
-        planets.add(new Planet(20, -220, 55, 55, 153, 204, 255, 255, 0.0079f, this));//uranus
+        
         planets.add(new Planet(-265, -20, 50, 50, 102, 153, 255, 255, 0.0077f, this));//neptune
         
         additions = new Additions(0.017f, this);
