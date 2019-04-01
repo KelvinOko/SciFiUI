@@ -101,8 +101,8 @@ public class UI extends PApplet
 
         background(0);
         // stroke(255);
-        // line(200, 300, mouseX, mouseY);
-        // println(mouseX, mouseY);
+        line(200, 300, mouseX, mouseY);
+        println(mouseX, mouseY);
 
         for(int c = 0; c < circles.size(); c++)
         {
