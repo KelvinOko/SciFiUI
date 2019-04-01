@@ -32,21 +32,22 @@ public class Additions{
         ui.fill(0, 255, 0);
         ui.noStroke();
         ui.ellipse(-84, -64, 15, 10);
+        
+        //cloud1
+        ui.fill(255);
+        ui.ellipse(-80, -84, 6, 6);//
+        ui.ellipse(-83, -82, 6, 6);//
+        ui.ellipse(-81, -79, 6, 6);//
+        ui.ellipse(-85, -85, 6, 6);//
+        ui.ellipse(-85, -79, 6, 6);//
+        //cloud2
+        ui.fill(255);
+        ui.ellipse(-75, -68, 7, 5);
+        ui.ellipse(-78, -70, 7, 5);
+        ui.ellipse(-76, -63, 7, 9);
+        ui.ellipse(-80, -69, 5, 7);
+        ui.ellipse(-80, -63, 5, 7);
         ui.popMatrix();
         rotation += r;
-        // //cloud1
-        // ui.fill(255);
-        // ui.ellipse(160, 155, 5, 5);
-        // ui.ellipse(163, 153, 5, 5);
-        // ui.ellipse(162, 158, 5, 5);
-        // ui.ellipse(158, 152, 5, 5);
-        // ui.ellipse(158, 158, 5, 5);
-        // //cloud2
-        // ui.fill(255);
-        // ui.ellipse(148, 166, 5, 5);
-        // ui.ellipse(152, 164, 5, 5);
-        // ui.ellipse(150, 169, 5, 5);
-        // ui.ellipse(146, 164, 5, 5);
-        // ui.ellipse(146, 169, 5, 5);
     }
 }

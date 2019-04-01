@@ -6,10 +6,10 @@ public class PlanetLines
 {
     int x1, y1, x2, y2, r, g, b, a;
     float rotation;
-    float rotate;
+    float rotateSpeed;
     PApplet ui;
 
-    public PlanetLines(int x1, int y1, int x2, int y2, int r, int g, int b, int a, float rotate, PApplet ui)
+    public PlanetLines(int x1, int y1, int x2, int y2, int r, int g, int b, int a, float rotateSpeed, PApplet ui)
     {
         this.x1 = x1;
         this.y1 = y1;
@@ -18,7 +18,7 @@ public class PlanetLines
         this.r = r;
         this.g = g;
         this.b = b;
-        this.rotate = rotate;
+        this.rotateSpeed = rotateSpeed;
         this.ui = ui;
     }
 
@@ -31,7 +31,7 @@ public class PlanetLines
         ui.rotate(rotation);
         ui.line(x1, y1, x2, y2);
         ui.popMatrix();
-        rotation += rotate;
+        rotation += rotateSpeed;
     }
 
 }
