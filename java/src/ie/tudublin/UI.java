@@ -1,8 +1,8 @@
 package ie.tudublin;
 
 import java.util.ArrayList;
-
 import processing.core.PApplet;
+import processing.core.PImage;
 
 public class UI extends PApplet
 {
@@ -14,6 +14,9 @@ public class UI extends PApplet
     ArrayList<Planet> planets = new ArrayList<>();
     ArrayList<PlanetLines> planetLines = new ArrayList<>();
     Additions additions;
+    Images p1, p2, p3, p4, p5, p6, p7, p8, p9;
+    PImage sun, mercury, venus, earth, mars, 
+    jupiter, saturn, uranus, neptune;
 
     boolean[] keys = new boolean[1024];
 
@@ -35,7 +38,7 @@ public class UI extends PApplet
 
     public void settings()
     {
-        size(1200, 700);
+        size(1400, 700);   
         // Use fullscreen instead of size to make your interface fullscreen
         //fullScreen(); 
     }
@@ -65,8 +68,11 @@ public class UI extends PApplet
         planets.add(new Planet(66, -50, 33, 33, 255, 204, 0, 255, 0.02f, this));//venus
         planets.add(new Planet(-80, -75, 40, 40, 0, 0, 190, 255, 0.017f, this));//earth
         planets.add(new Planet(116, 70, 25, 25, 204, 51, 0, 255, 0.015f, this));//mars
-
         planets.add(new Planet(-108, 125, 75, 75, 255, 204, 102, 255, 0.009f, this));//jupiter
+        planets.add(new Planet(155, -105, 65, 65, 255, 204, 51, 255, 0.0082f, this));//saturn
+        planets.add(new Planet(20, -220, 55, 55, 153, 204, 255, 255, 0.0079f, this));//uranus
+        planets.add(new Planet(-265, -20, 50, 50, 102, 153, 255, 255, 0.0077f, this));//neptune
+
         //jupiter lines
         planetLines.add(new PlanetLines(-123, 90, -93, 90, 190, 101, 0, 255, 0.009f, this));//1
         planetLines.add(new PlanetLines(-131, 95, -85, 95, 240, 153, 51, 255, 0.009f, this));//2
@@ -83,18 +89,16 @@ public class UI extends PApplet
         planetLines.add(new PlanetLines(-136, 150, -81, 150, 240, 153, 51, 255, 0.009f, this));//12
         planetLines.add(new PlanetLines(-130, 155, -86, 155, 255, 255, 255, 100, 0.009f, this));//13
         planetLines.add(new PlanetLines(-121, 160, -95, 160, 240, 153, 51, 255, 0.009f, this));//14
-        
-        planets.add(new Planet(155, -105, 65, 65, 255, 204, 51, 255, 0.0082f, this));//saturn
         //saturn line
         planetLines.add(new PlanetLines(117, -82, 190, -128, 255, 255, 255, 100,  0.0082f, this));
-
-        planets.add(new Planet(20, -220, 55, 55, 153, 204, 255, 255, 0.0079f, this));//uranus
         //uranus line
         planetLines.add(new PlanetLines(-14, -206, 53, -233, 255, 255, 255, 50, 0.0079f, this));
         
-        planets.add(new Planet(-265, -20, 50, 50, 102, 153, 255, 255, 0.0077f, this));//neptune
-        
         additions = new Additions(0.017f, this);
+
+        //the sun
+        p1 = new Images(700, 70, 250, 250, this);
+        sun = p1.loadImages("sun.png");
 
     }
 
@@ -121,7 +125,7 @@ public class UI extends PApplet
         radar.render();
         radar.update();
 
-        grid.drawGrid();
+        //grid.drawGrid();
 
 
         for(int i = 0; i < planets.size(); i++)
@@ -136,6 +140,8 @@ public class UI extends PApplet
         }
 
         additions.drawAdditions();
+
+        p1.drawImages(sun);
         
 
         if (checkKey(LEFT))
@@ -146,4 +152,3 @@ public class UI extends PApplet
         
     }
 }
-
