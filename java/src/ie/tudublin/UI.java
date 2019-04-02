@@ -97,8 +97,33 @@ public class UI extends PApplet
         additions = new Additions(0.017f, this);
 
         //the sun
-        p1 = new Images(700, 70, 250, 250, this);
+        p1 = new Images(600, 70, 150, 150, this);
         sun = p1.loadImages("sun.png");
+        //mercury
+        p2 = new Images(750, 140, 24, 24, this);
+        mercury = p2.loadImages("mercury.png");
+        //venus
+        p3 = new Images(790, 137, 30, 30, this);
+        venus = p3.loadImages("venus.png");
+        //earth
+        p4 = new Images(830, 134, 36, 36, this);
+        earth = p4.loadImages("earth.png");
+        //mars
+        p5 = new Images(875, 138, 26, 26, this);
+        mars = p5.loadImages("mars.png");
+        //jupiter
+        p6 = new Images(930, 105, 90, 90, this);
+        jupiter = p6.loadImages("jupiter.png");
+        //saturn
+        p7 = new Images(1025, 120, 120, 65, this);
+        saturn = p7.loadImages("saturn.png");
+        //uranus
+        p8 = new Images(1150, 130, 44, 44, this);
+        uranus = p8.loadImages("uranus.png");
+        //neptune
+        p9 = new Images(1220, 125, 50, 50, this);
+        neptune = p9.loadImages("neptune.png");
+        
 
     }
 
@@ -142,6 +167,14 @@ public class UI extends PApplet
         additions.drawAdditions();
 
         p1.drawImages(sun);
+        p2.drawImages(mercury);
+        p3.drawImages(venus);
+        p4.drawImages(earth);
+        p5.drawImages(mars);
+        p6.drawImages(jupiter);
+        p7.drawImages(saturn);
+        p8.drawImages(uranus);
+        p9.drawImages(neptune);
         
 
         if (checkKey(LEFT))
