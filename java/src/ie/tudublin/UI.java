@@ -21,6 +21,22 @@ public class UI extends PApplet
     jupiterInfo, saturnInfo, uranusInfo, neptuneInfo;
     int mode = 0;
     
+    boolean[] keys = new boolean[1024];
+
+    public void keyPressed()
+    {
+        keys[keyCode] = true;
+    }
+    
+    public void keyReleased()
+    {
+        keys[keyCode] = false;
+    }
+
+    public boolean checkKey(int c)
+    {
+        return keys[c] || keys [Character.toUpperCase(c)];
+    }
 
     public void settings()
     {
@@ -145,65 +161,61 @@ public class UI extends PApplet
         }
     }
 
-    public void keyPressed()
-    {
-        
-    }
-
     public void draw()
     {
 
-        
-        background(0);
-        // stroke(255);
-        // line(200, 300, mouseX, mouseY);
-        // println(mouseX, mouseY);
-        //println(mode);
-
-        for(int c = 0; c < circles.size(); c++)
-        {
-            circles.get(c).drawCircles();
-        }
-
-        for(int l = 0; l < lines.size(); l++)
-        {
-            lines.get(l).drawLines();
-        }
-
-        stars.drawStars();
-
-        radar.render();
-        radar.update();
-
-        grid.drawGrid();
-
-
-        for(int i = 0; i < planets.size(); i++)
-        {
-            planets.get(i).drawPlanet();
-        }
-
-
-        for(int pl = 0; pl < planetLines.size(); pl++)
-        {
-            planetLines.get(pl).drawPlanetLines();
-        }
-
-        additions.drawAdditions();
-
-        p1.drawImages(sun);
-        p2.drawImages(mercury);
-        p3.drawImages(venus);
-        p4.drawImages(earth);
-        p5.drawImages(mars);
-        p6.drawImages(jupiter);
-        p7.drawImages(saturn);
-        p8.drawImages(uranus);
-        p9.drawImages(neptune);
-
-        if(mode == 1)
+        if(mode == 0)
         {
             background(0);
+            // stroke(255);
+            // line(200, 300, mouseX, mouseY);
+            // println(mouseX, mouseY);
+            //println(mode);
+
+            for(int c = 0; c < circles.size(); c++)
+            {
+                circles.get(c).drawCircles();
+            }
+
+            for(int l = 0; l < lines.size(); l++)
+            {
+                lines.get(l).drawLines();
+            }
+
+            stars.drawStars();
+
+            radar.render();
+            radar.update();
+
+            grid.drawGrid();
+
+
+            for(int i = 0; i < planets.size(); i++)
+            {
+                planets.get(i).drawPlanet();
+            }
+
+
+            for(int pl = 0; pl < planetLines.size(); pl++)
+            {
+                planetLines.get(pl).drawPlanetLines();
+            }
+
+            additions.drawAdditions();
+
+            p1.drawImages(sun);
+            p2.drawImages(mercury);
+            p3.drawImages(venus);
+            p4.drawImages(earth);
+            p5.drawImages(mars);
+            p6.drawImages(jupiter);
+            p7.drawImages(saturn);
+            p8.drawImages(uranus);
+            p9.drawImages(neptune);
+        }else if(mode == 1)
+        {
+            background(0);
+        
         }else if(mode == 2)
         {
             background(0);
@@ -230,6 +242,10 @@ public class UI extends PApplet
             background(0);
         }
 
+        if (checkKey(LEFT))
+        {
+            System.out.println("Left arrow key pressed");
+        }
         
     }
 }
