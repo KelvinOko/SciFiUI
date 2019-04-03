@@ -3,6 +3,7 @@ package ie.tudublin;
 import java.util.ArrayList;
 import processing.core.PApplet;
 import processing.core.PImage;
+//import peasy.*;
 
 public class UI extends PApplet
 {
@@ -15,11 +16,15 @@ public class UI extends PApplet
     ArrayList<PlanetLines> planetLines = new ArrayList<>();
     Additions additions;
     Images p1, p2, p3, p4, p5, p6, p7, p8, p9;
+    PlanetInfo p1Info, p2Info, p3Info, p4Info, p5Info, 
+    p6Info, p7Info, p8Info, p9Info;
     PImage sun, mercury, venus, earth, mars, 
     jupiter, saturn, uranus, neptune;
     PImage sunInfo, mercuryInfo, venusInfo, earthInfo, marsInfo, 
     jupiterInfo, saturnInfo, uranusInfo, neptuneInfo;
     int mode = 0;
+    // float camSize = 800;
+    // PeasyCam cam;
     
     boolean[] keys = new boolean[1024];
 
@@ -42,13 +47,15 @@ public class UI extends PApplet
     {
         size(1400, 700, P3D);   
         // Use fullscreen instead of size to make your interface fullscreen
-        //fullScreen(); 
+        //fullScreen();
     }
 
     
 
     public void setup()
     {
+        //cam = new PeasyCam(this, camSize);
+
         circles.add(new Circles(310, 310, 120, 120, this));
         circles.add(new Circles(310, 310, 168, 168, this));
         circles.add(new Circles(310, 310, 220, 220, this));
@@ -101,6 +108,8 @@ public class UI extends PApplet
         //the sun
         p1 = new Images(600, 70, 150, 150, this);
         sun = p1.loadImages("sun.png");
+        p1Info = new PlanetInfo(200, this);
+        sunInfo = p1Info.loadInfo("3dsun.jpg");
         //mercury
         p2 = new Images(750, 140, 24, 24, this);
         mercury = p2.loadImages("mercury.png");
@@ -215,6 +224,7 @@ public class UI extends PApplet
         }else if(mode == 1)
         {
             background(0);
+            p1Info.drawInfo(sunInfo);
         
         }else if(mode == 2)
         {
