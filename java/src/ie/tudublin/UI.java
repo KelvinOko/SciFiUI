@@ -19,11 +19,12 @@ public class UI extends PApplet
     jupiter, saturn, uranus, neptune;
     PImage sunInfo, mercuryInfo, venusInfo, earthInfo, marsInfo, 
     jupiterInfo, saturnInfo, uranusInfo, neptuneInfo;
+    int mode = 0;
     
 
     public void settings()
     {
-        size(1400, 700);   
+        size(1400, 700, P3D);   
         // Use fullscreen instead of size to make your interface fullscreen
         //fullScreen(); 
     }
@@ -106,19 +107,58 @@ public class UI extends PApplet
         p8 = new Images(1150, 130, 44, 44, this);
         uranus = p8.loadImages("uranus.png");
         //neptune
-        p9 = new Images(1220, 125, 50, 50, this);
+        p9 = new Images(1210, 125, 50, 50, this);
         neptune = p9.loadImages("neptune.png");
         
+    }
 
+    public void mousePressed()
+    {
+        
+        if((mouseX > 610 && mouseX < 740) && (mouseY > 80 && mouseY < 210))//sun
+        {
+            mode = 1;
+        }else if((mouseX > 754 && mouseX < 770) && (mouseY > 143 && mouseY < 161))//mercury 
+        {
+            mode = 2; 
+        }else if((mouseX > 791 && mouseX < 819) && (mouseY > 138 && mouseY < 167))//venus
+        {
+            mode = 3;
+        }else if((mouseX > 833 && mouseX < 863) && (mouseY > 138 && mouseY < 167))//earth
+        {
+            mode = 4;
+        }else if((mouseX > 876 && mouseX < 900) && (mouseY > 139 && mouseY < 162))//mars
+        {
+            mode = 5;
+        }else if((mouseX > 925 && mouseX < 1012) && (mouseY > 106 && mouseY < 194))//jupiter
+        {
+            mode = 6;
+        }else if((mouseX > 1038 && mouseX < 1130) && (mouseY > 127 && mouseY < 174))//saturn
+        {
+            mode = 7;
+        }else if((mouseX > 1151 && mouseX < 1193) && (mouseY > 131 && mouseY < 172))//uranus
+        {
+            mode = 8;
+        }else if((mouseX > 1218 && mouseX < 1251) && (mouseY > 133 && mouseY < 167))//neptune
+        {
+            mode = 9;
+        }
+    }
+
+    public void keyPressed()
+    {
+        
     }
 
     public void draw()
     {
 
+        
         background(0);
         // stroke(255);
         // line(200, 300, mouseX, mouseY);
         // println(mouseX, mouseY);
+        //println(mode);
 
         for(int c = 0; c < circles.size(); c++)
         {
@@ -160,6 +200,35 @@ public class UI extends PApplet
         p7.drawImages(saturn);
         p8.drawImages(uranus);
         p9.drawImages(neptune);
+
+        if(mode == 1)
+        {
+            background(0);
+        }else if(mode == 2)
+        {
+            background(0);
+        }else if(mode == 3)
+        {
+            background(0);
+        }else if(mode == 4)
+        {
+            background(0);
+        }else if(mode == 5)
+        {
+            background(0);
+        }else if(mode == 6)
+        {
+            background(0);
+        }else if(mode == 7)
+        {
+            background(0);
+        }else if(mode == 8)
+        {
+            background(0);
+        }else if(mode == 9)
+        {
+            background(0);
+        }
 
         
     }
