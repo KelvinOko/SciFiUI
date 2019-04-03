@@ -17,23 +17,8 @@ public class UI extends PApplet
     Images p1, p2, p3, p4, p5, p6, p7, p8, p9;
     PImage sun, mercury, venus, earth, mars, 
     jupiter, saturn, uranus, neptune;
-
-    boolean[] keys = new boolean[1024];
-
-    public void keyPressed()
-    {
-        keys[keyCode] = true;
-    }
-    
-    public void keyReleased()
-    {
-        keys[keyCode] = true;
-    }
-
-    public boolean checkKey(int c)
-    {
-        return keys[c] || keys [Character.toUpperCase(c)];
-    }
+    PImage sunInfo, mercuryInfo, venusInfo, earthInfo, marsInfo, 
+    jupiterInfo, saturnInfo, uranusInfo, neptuneInfo;
     
 
     public void settings()
@@ -61,7 +46,7 @@ public class UI extends PApplet
 
         stars = new Stars(200, this);
         radar = new Radar(this, 310, 310, 530);
-        grid = new Grid(700, 150, 1100, 550, 0, 0, this);
+        grid = new Grid(755, 275, 1155, 675, 0, 0, this);
 
         planets.add(new Planet(0, 0, 100, 100, 231, 116, 0, 255, 0, this));//sun
         planets.add(new Planet(60, 0, 20, 20, 153, 153, 102, 255, 0.06f, this));//mercury
@@ -112,7 +97,7 @@ public class UI extends PApplet
         p5 = new Images(875, 138, 26, 26, this);
         mars = p5.loadImages("mars.png");
         //jupiter
-        p6 = new Images(930, 105, 90, 90, this);
+        p6 = new Images(923, 105, 90, 90, this);
         jupiter = p6.loadImages("jupiter.png");
         //saturn
         p7 = new Images(1025, 120, 120, 65, this);
@@ -150,7 +135,7 @@ public class UI extends PApplet
         radar.render();
         radar.update();
 
-        //grid.drawGrid();
+        grid.drawGrid();
 
 
         for(int i = 0; i < planets.size(); i++)
@@ -175,12 +160,6 @@ public class UI extends PApplet
         p7.drawImages(saturn);
         p8.drawImages(uranus);
         p9.drawImages(neptune);
-        
-
-        if (checkKey(LEFT))
-        {
-            System.out.println("Left arrow key pressed");
-        }
 
         
     }
