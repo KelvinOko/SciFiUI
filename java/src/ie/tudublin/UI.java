@@ -22,7 +22,7 @@ public class UI extends PApplet
     jupiter, saturn, uranus, uranusRing, neptune;
     PImage sunInfo, mercuryInfo, venusInfo, earthInfo, marsInfo, 
     jupiterInfo, saturnInfo, uranusInfo, neptuneInfo;
-    int mode = 0;
+    int mode, back = 0;
     // float camSize = 800;
     // PeasyCam cam;
     
@@ -241,40 +241,105 @@ public class UI extends PApplet
         {
             background(0);
             p1Info.drawInfo(sunInfo);
-            
+            // stroke(255);
+            // rect(40, 40, 100, 50);
+            // noStroke();
+            if(keyPressed)
+            {
+                if (key == 'b' || key == 'B')
+                {
+                    background(255);
+                }
+            }
         
         }else if(mode == 2)
         {
             background(0);
             p2Info.drawInfo(mercuryInfo);
+            if(keyPressed)
+            {
+                if (key == 'b' || key == 'B')
+                {
+                    background(255);
+                }
+            }
         }else if(mode == 3)
         {
             background(0);
             p3Info.drawInfo(venusInfo);
+            if(keyPressed)
+            {
+                if (key == 'b' || key == 'B')
+                {
+                    background(255);
+                }
+            }
         }else if(mode == 4)
         {
             background(0);
             p4Info.drawInfo(earthInfo);
+            if(keyPressed)
+            {
+                if (key == 'b' || key == 'B')
+                {
+                    background(255);
+                }
+            }
         }else if(mode == 5)
         {
             background(0);
             p5Info.drawInfo(marsInfo);
+            if(keyPressed)
+            {
+                if (key == 'b' || key == 'B')
+                {
+                    background(255);
+                }
+            }
         }else if(mode == 6)
         {
             background(0);
             p6Info.drawInfo(jupiterInfo);
+            if(keyPressed)
+            {
+                if (key == 'b' || key == 'B')
+                {
+                    background(255);
+                }
+            }
         }else if(mode == 7)
         {
             background(0);
             p7Info.drawInfo(saturnInfo);
+            if(keyPressed)
+            {
+                if (key == 'b' || key == 'B')
+                {
+                    background(255);
+                }
+            }
         }else if(mode == 8)
         {
             background(0);
             p8Info.drawInfo(uranusInfo);
+            if(keyPressed)
+            {
+                if (key == 'b' || key == 'B')
+                {
+                    background(255);
+                }
+            }
         }else if(mode == 9)
         {
             background(0);
             p9Info.drawInfo(neptuneInfo);
+            if(keyPressed)
+            {
+                if (key == 'b' || key == 'B')
+                {
+                    background(255);
+                }
+            }
         }
 
         if (checkKey(LEFT))
