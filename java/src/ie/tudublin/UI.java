@@ -248,7 +248,7 @@ public class UI extends PApplet
             {
                 if (key == 'b' || key == 'B')
                 {
-                    background(255);
+                    mode = 0;
                 }
             }
         
@@ -260,7 +260,7 @@ public class UI extends PApplet
             {
                 if (key == 'b' || key == 'B')
                 {
-                    background(255);
+                    mode = 0;
                 }
             }
         }else if(mode == 3)
@@ -271,7 +271,7 @@ public class UI extends PApplet
             {
                 if (key == 'b' || key == 'B')
                 {
-                    background(255);
+                    mode = 0;
                 }
             }
         }else if(mode == 4)
@@ -282,7 +282,7 @@ public class UI extends PApplet
             {
                 if (key == 'b' || key == 'B')
                 {
-                    background(255);
+                    mode = 0;
                 }
             }
         }else if(mode == 5)
@@ -293,7 +293,7 @@ public class UI extends PApplet
             {
                 if (key == 'b' || key == 'B')
                 {
-                    background(255);
+                    mode = 0;
                 }
             }
         }else if(mode == 6)
@@ -304,7 +304,7 @@ public class UI extends PApplet
             {
                 if (key == 'b' || key == 'B')
                 {
-                    background(255);
+                    mode = 0;
                 }
             }
         }else if(mode == 7)
@@ -315,7 +315,7 @@ public class UI extends PApplet
             {
                 if (key == 'b' || key == 'B')
                 {
-                    background(255);
+                    mode = 0;
                 }
             }
         }else if(mode == 8)
@@ -326,7 +326,7 @@ public class UI extends PApplet
             {
                 if (key == 'b' || key == 'B')
                 {
-                    background(255);
+                    mode = 0;
                 }
             }
         }else if(mode == 9)
@@ -337,7 +337,7 @@ public class UI extends PApplet
             {
                 if (key == 'b' || key == 'B')
                 {
-                    background(255);
+                    mode = 0;
                 }
             }
         }
