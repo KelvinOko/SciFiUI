@@ -32,6 +32,12 @@ public class PlanetInfo
         globe.setTexture(planet);
         ui.noStroke();
         ui.shape(globe);
+        ui.stroke(255);
+        ui.strokeWeight(10);
+        ui.noFill();
+        ui.rotateX((float) (ui.HALF_PI - .45));
+        ui.ellipse(0, 0, 400, 400);
         ui.popMatrix();
+        ui.strokeWeight(1);
     }
 }
