@@ -19,7 +19,7 @@ public class UI extends PApplet
     PlanetInfo p1Info, p2Info, p3Info, p4Info, p5Info, 
     p6Info, p7Info, p8Info, p9Info;
     PImage sun, mercury, venus, earth, mars, 
-    jupiter, saturn, uranus, neptune;
+    jupiter, saturn, uranus, uranusRing, neptune;
     PImage sunInfo, mercuryInfo, venusInfo, earthInfo, marsInfo, 
     jupiterInfo, saturnInfo, uranusInfo, neptuneInfo;
     int mode = 0;
@@ -45,7 +45,7 @@ public class UI extends PApplet
 
     public void settings()
     {
-        size(1400, 700, P3D);   
+        fullScreen(P3D);   
         // Use fullscreen instead of size to make your interface fullscreen
         //fullScreen();
     }
@@ -108,32 +108,48 @@ public class UI extends PApplet
         //the sun
         p1 = new Images(600, 70, 150, 150, this);
         sun = p1.loadImages("sun.png");
-        p1Info = new PlanetInfo(200, this);
+        p1Info = new PlanetInfo(150, this);
         sunInfo = p1Info.loadInfo("3dsun.jpg");
         //mercury
         p2 = new Images(750, 140, 24, 24, this);
         mercury = p2.loadImages("mercury.png");
+        p2Info = new PlanetInfo(150, this);
+        mercuryInfo = p2Info.loadInfo("3dmercury.jpg");
         //venus
         p3 = new Images(790, 137, 30, 30, this);
         venus = p3.loadImages("venus.png");
+        p3Info = new PlanetInfo(150, this);
+        venusInfo = p3Info.loadInfo("3dvenus.jpg");
         //earth
         p4 = new Images(830, 134, 36, 36, this);
         earth = p4.loadImages("earth.png");
+        p4Info = new PlanetInfo(150, this);
+        earthInfo = p4Info.loadInfo("3dearth.jpg");
         //mars
         p5 = new Images(875, 138, 26, 26, this);
         mars = p5.loadImages("mars.png");
+        p5Info = new PlanetInfo(150, this);
+        marsInfo = p5Info.loadInfo("3dmars.jpg");
         //jupiter
         p6 = new Images(923, 105, 90, 90, this);
         jupiter = p6.loadImages("jupiter.png");
+        p6Info = new PlanetInfo(150, this);
+        jupiterInfo = p6Info.loadInfo("3djupiter.jpg");
         //saturn
         p7 = new Images(1025, 120, 120, 65, this);
         saturn = p7.loadImages("saturn.png");
+        p7Info = new PlanetInfo(150, this);
+        saturnInfo = p7Info.loadInfo("3dsaturn.jpg");
         //uranus
         p8 = new Images(1150, 130, 44, 44, this);
         uranus = p8.loadImages("uranus.png");
+        p8Info = new PlanetInfo(150, this);
+        uranusInfo = p8Info.loadInfo("3duranus.jpg");
         //neptune
         p9 = new Images(1210, 125, 50, 50, this);
         neptune = p9.loadImages("neptune.png");
+        p9Info = new PlanetInfo(150, this);
+        neptuneInfo = p9Info.loadInfo("3dneptune.jpg");
         
     }
 
@@ -225,31 +241,40 @@ public class UI extends PApplet
         {
             background(0);
             p1Info.drawInfo(sunInfo);
+            
         
         }else if(mode == 2)
         {
             background(0);
+            p2Info.drawInfo(mercuryInfo);
         }else if(mode == 3)
         {
             background(0);
+            p3Info.drawInfo(venusInfo);
         }else if(mode == 4)
         {
             background(0);
+            p4Info.drawInfo(earthInfo);
         }else if(mode == 5)
         {
             background(0);
+            p5Info.drawInfo(marsInfo);
         }else if(mode == 6)
         {
             background(0);
+            p6Info.drawInfo(jupiterInfo);
         }else if(mode == 7)
         {
             background(0);
+            p7Info.drawInfo(saturnInfo);
         }else if(mode == 8)
         {
             background(0);
+            p8Info.drawInfo(uranusInfo);
         }else if(mode == 9)
         {
             background(0);
+            p9Info.drawInfo(neptuneInfo);
         }
 
         if (checkKey(LEFT))

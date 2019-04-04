@@ -18,7 +18,7 @@ public class Stars{
         {
             ui.stroke(255, 255, 204);
             ui.fill(255, 255, 204);
-            ui.ellipse(ui.random(0,1400), ui.random(0,700), 2, 2);
+            ui.ellipse(ui.random(0,ui.width), ui.random(0,ui.height), 2, 2);
         }
 
     }
