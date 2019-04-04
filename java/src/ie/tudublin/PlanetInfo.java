@@ -3,11 +3,9 @@ package ie.tudublin;
 import processing.core.PApplet;
 import processing.core.PImage;
 import processing.core.PShape;
-//import peasy.*;
 
 public class PlanetInfo
 {
-    // PeasyCam cam;
     PImage planet;
     PShape globe;
     int size;
@@ -28,7 +26,8 @@ public class PlanetInfo
     public void drawInfo(PImage name)
     {
         ui.pushMatrix();
-        ui.translate(ui.width/2, ui.height/2);
+        ui.translate(ui.width - 400, ui.height/2);
+        ui.rotateY(ui.PI * ui.frameCount / 500);
         globe = ui.createShape(ui.SPHERE, size); 
         globe.setTexture(planet);
         ui.noStroke();

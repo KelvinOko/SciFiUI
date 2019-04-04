@@ -3,7 +3,6 @@ package ie.tudublin;
 import java.util.ArrayList;
 import processing.core.PApplet;
 import processing.core.PImage;
-//import peasy.*;
 
 public class UI extends PApplet
 {
@@ -23,8 +22,6 @@ public class UI extends PApplet
     PImage sunInfo, mercuryInfo, venusInfo, earthInfo, marsInfo, 
     jupiterInfo, saturnInfo, uranusInfo, neptuneInfo;
     int mode, back = 0;
-    // float camSize = 800;
-    // PeasyCam cam;
     
     boolean[] keys = new boolean[1024];
 
@@ -54,7 +51,6 @@ public class UI extends PApplet
 
     public void setup()
     {
-        //cam = new PeasyCam(this, camSize);
 
         circles.add(new Circles(310, 310, 120, 120, this));
         circles.add(new Circles(310, 310, 168, 168, this));
