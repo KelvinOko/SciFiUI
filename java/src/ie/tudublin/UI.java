@@ -21,8 +21,7 @@ public class UI extends PApplet
     jupiter, saturn, uranus, neptune;
     PImage sunInfo, mercuryInfo, venusInfo, earthInfo, marsInfo, 
     jupiterInfo, saturnInfo, uranusInfo, neptuneInfo;
-    Rings sRing, uRing;
-    PImage saturnRing, uranusRing;
+    Rings saturnRing, uranusRing;
     int mode, back = 0;
     
     boolean[] keys = new boolean[1024];
@@ -103,12 +102,8 @@ public class UI extends PApplet
         
         additions = new Additions(0.017f, this);
 
-        //3d saturn ring
-        sRing = new Rings(400, this);
-        saturnRing = sRing.loadRings("3dsaturnring.jpg");
-        //3d uranus ring
-        uRing = new Rings(400, this);
-        uranusRing = uRing.loadRings("3duranusring.jpg");
+        saturnRing = new Rings(10, 255, 221, 153, 0, 0, 400, 400, this);
+        uranusRing = new Rings(2, 220, 255, 255, 0, 0, 400, 400, this);
 
         //the sun
         p1 = new Images(600, 70, 150, 150, this);
@@ -328,7 +323,7 @@ public class UI extends PApplet
             stars.drawStars();
             noStroke();
             p7Info.drawInfo(saturnInfo);
-            sRing.drawRings(saturnRing);
+            saturnRing.drawRings();
             if(keyPressed)
             {
                 if (key == 'b' || key == 'B')
@@ -342,7 +337,7 @@ public class UI extends PApplet
             stars.drawStars();
             noStroke();
             p8Info.drawInfo(uranusInfo);
-            uRing.drawRings(uranusRing);
+            uranusRing.drawRings();
             if(keyPressed)
             {
                 if (key == 'b' || key == 'B')
