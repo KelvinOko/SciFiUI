@@ -240,10 +240,9 @@ public class UI extends PApplet
         }else if(mode == 1)
         {
             background(0);
+            stars.drawStars();
+            noStroke();
             p1Info.drawInfo(sunInfo);
-            // stroke(255);
-            // rect(40, 40, 100, 50);
-            // noStroke();
             if(keyPressed)
             {
                 if (key == 'b' || key == 'B')
@@ -255,6 +254,8 @@ public class UI extends PApplet
         }else if(mode == 2)
         {
             background(0);
+            stars.drawStars();
+            noStroke();
             p2Info.drawInfo(mercuryInfo);
             if(keyPressed)
             {
@@ -266,6 +267,8 @@ public class UI extends PApplet
         }else if(mode == 3)
         {
             background(0);
+            stars.drawStars();
+            noStroke();
             p3Info.drawInfo(venusInfo);
             if(keyPressed)
             {
@@ -277,6 +280,8 @@ public class UI extends PApplet
         }else if(mode == 4)
         {
             background(0);
+            stars.drawStars();
+            noStroke();
             p4Info.drawInfo(earthInfo);
             if(keyPressed)
             {
@@ -288,6 +293,8 @@ public class UI extends PApplet
         }else if(mode == 5)
         {
             background(0);
+            stars.drawStars();
+            noStroke();
             p5Info.drawInfo(marsInfo);
             if(keyPressed)
             {
@@ -299,6 +306,8 @@ public class UI extends PApplet
         }else if(mode == 6)
         {
             background(0);
+            stars.drawStars();
+            noStroke();
             p6Info.drawInfo(jupiterInfo);
             if(keyPressed)
             {
@@ -310,6 +319,8 @@ public class UI extends PApplet
         }else if(mode == 7)
         {
             background(0);
+            stars.drawStars();
+            noStroke();
             p7Info.drawInfo(saturnInfo);
             if(keyPressed)
             {
@@ -321,6 +332,8 @@ public class UI extends PApplet
         }else if(mode == 8)
         {
             background(0);
+            stars.drawStars();
+            noStroke();
             p8Info.drawInfo(uranusInfo);
             if(keyPressed)
             {
@@ -332,6 +345,8 @@ public class UI extends PApplet
         }else if(mode == 9)
         {
             background(0);
+            stars.drawStars();
+            noStroke();
             p9Info.drawInfo(neptuneInfo);
             if(keyPressed)
             {
