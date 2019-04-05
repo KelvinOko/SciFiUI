@@ -3,6 +3,8 @@ package ie.tudublin;
 import java.util.ArrayList;
 import processing.core.PApplet;
 import processing.core.PImage;
+import processing.data.Table;
+import processing.data.TableRow;
 
 public class UI extends PApplet
 {
@@ -21,8 +23,9 @@ public class UI extends PApplet
     jupiter, saturn, uranus, neptune;
     PImage sunInfo, mercuryInfo, venusInfo, earthInfo, marsInfo, 
     jupiterInfo, saturnInfo, uranusInfo, neptuneInfo;
-    Rings saturnRing, uranusRing;
+    Rings saturnRing1, saturnRing2, uranusRing;
     int mode, back = 0;
+    private ArrayList<Coords> coords = new ArrayList<Coords>();
     
     boolean[] keys = new boolean[1024];
 
@@ -52,7 +55,6 @@ public class UI extends PApplet
 
     public void setup()
     {
-
         circles.add(new Circles(310, 310, 120, 120, this));
         circles.add(new Circles(310, 310, 168, 168, this));
         circles.add(new Circles(310, 310, 220, 220, this));
@@ -102,8 +104,9 @@ public class UI extends PApplet
         
         additions = new Additions(0.017f, this);
 
-        saturnRing = new Rings(10, 255, 221, 153, 0, 0, 400, 400, this);
-        uranusRing = new Rings(2, 220, 255, 255, 0, 0, 400, 400, this);
+        saturnRing1 = new Rings(20, 255, 221, 153, 160, 0, 0, 400, 400, this);
+        saturnRing2 = new Rings(20, 153, 153, 102, 170, 0, 0, 435, 435, this);
+        uranusRing = new Rings(2, 220, 255, 255, 100, 0, 0, 400, 400, this);
 
         //the sun
         p1 = new Images(600, 70, 150, 150, this);
@@ -151,7 +154,9 @@ public class UI extends PApplet
         p9Info = new PlanetInfo(150, this);
         neptuneInfo = p9Info.loadInfo("3dneptune.jpg");
 
-        
+        loadCoords();
+        //drawCoords();
+
     }
 
     public void mousePressed()
@@ -187,6 +192,30 @@ public class UI extends PApplet
         }
     }
 
+
+
+    public void loadCoords() 
+    {
+        Table table = loadTable("coords.csv", "header");
+        for (TableRow row : table.rows()) 
+        {
+            Coords coord = new Coords(row);
+            coords.add(coord);
+        }
+    }
+
+    public void drawCoords()
+    {
+        for(Coords coord : coords)
+        {
+            stroke(255);
+            fill(255);
+            ellipse(coord.getX(), coord.getY(), coord.getDiameter(), coord.getDiameter());
+            noFill();
+            noStroke();
+        }
+    }
+
     public void draw()
     {
 
@@ -215,7 +244,6 @@ public class UI extends PApplet
 
             grid.drawGrid();
 
-
             for(int i = 0; i < planets.size(); i++)
             {
                 planets.get(i).drawPlanet();
@@ -238,6 +266,12 @@ public class UI extends PApplet
             p7.drawImages(saturn);
             p8.drawImages(uranus);
             p9.drawImages(neptune);
+
+            // for(int w = 0; w < coords.size(); w++)
+            // {
+            //     coords.get(w).drawCoords();
+            // }
+
         }else if(mode == 1)
         {
             background(0);
@@ -323,7 +357,8 @@ public class UI extends PApplet
             stars.drawStars();
             noStroke();
             p7Info.drawInfo(saturnInfo);
-            saturnRing.drawRings();
+            saturnRing1.drawRings();
+            saturnRing2.drawRings();
             if(keyPressed)
             {
                 if (key == 'b' || key == 'B')

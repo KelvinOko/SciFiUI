@@ -4,15 +4,16 @@ import processing.core.PApplet;
 
 public class Rings
 {
-    float weight, r, g, b, x, y, s1, s2;
+    float weight, r, g, b, a, x, y, s1, s2;
     PApplet ui;
 
-    public Rings(float weight, float r, float g, float b, float x, float y, float s1, float s2, PApplet ui)
+    public Rings(float weight, float r, float g, float b, float a, float x, float y, float s1, float s2, PApplet ui)
     {
         this.weight = weight;
         this.r = r;
         this.g = g;
         this.b = b;
+        this.a = a;
         this.x = x;
         this.y = y;
         this.s1 = s1;
@@ -25,7 +26,7 @@ public class Rings
         ui.pushMatrix();
         ui.translate(ui.width - 400, ui.height/2);
         ui.rotateY(ui.PI * ui.frameCount / 500);
-        ui.stroke(r, g, b);
+        ui.stroke(r, g, b, a);
         ui.strokeWeight(weight);
         ui.noFill();
         ui.rotateX((float) (ui.HALF_PI - .45));
