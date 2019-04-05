@@ -267,10 +267,10 @@ public class UI extends PApplet
             p8.drawImages(uranus);
             p9.drawImages(neptune);
 
-            // for(int w = 0; w < coords.size(); w++)
-            // {
-            //     coords.get(w).drawCoords();
-            // }
+            for(int w = 0; w < coords.size(); w++)
+            {
+                drawCoords();
+            }
 
         }else if(mode == 1)
         {
