@@ -28,25 +28,26 @@ public class UI extends PApplet
     Rings saturnRing1, saturnRing2, uranusRing;
     int mode, back = 0;
     private ArrayList<Coords> coords = new ArrayList<Coords>();
+    private ArrayList<PlanetFacts> sunFacts = new ArrayList<PlanetFacts>();
     AudioPlayer track;
     Minim minim;
     
-    boolean[] keys = new boolean[1024];
+    // boolean[] keys = new boolean[1024];
 
-    public void keyPressed()
-    {
-        keys[keyCode] = true;
-    }
+    // public void keyPressed()
+    // {
+    //     keys[keyCode] = true;
+    // }
     
-    public void keyReleased()
-    {
-        keys[keyCode] = false;
-    }
+    // public void keyReleased()
+    // {
+    //     keys[keyCode] = false;
+    // }
 
-    public boolean checkKey(int c)
-    {
-        return keys[c] || keys [Character.toUpperCase(c)];
-    }
+    // public boolean checkKey(int c)
+    // {
+    //     return keys[c] || keys [Character.toUpperCase(c)];
+    // }
 
     public void settings()
     {
@@ -164,6 +165,7 @@ public class UI extends PApplet
         neptuneInfo = p9Info.loadInfo("3dneptune.jpg");
 
         loadCoords();
+        loadSunFacts();
 
     }
 
@@ -226,6 +228,31 @@ public class UI extends PApplet
               textAlign(CENTER);
               text(coord.getName(), coord.getX(), coord.getY() + coord.getDiameter()/2 + 20);
             }
+            noFill();
+            noStroke();
+        }
+    }
+
+    public void loadSunFacts() 
+    {
+        Table table = loadTable("sun.csv", "header");
+        for (TableRow row : table.rows()) 
+        {
+            PlanetFacts sFacts = new PlanetFacts(row);
+            sunFacts.add(sFacts);
+        }
+    }
+
+    public void drawSunFacts()
+    {
+        for(PlanetFacts sFacts : sunFacts)
+        {
+            stroke(255);
+            fill(255);
+            textAlign(CENTER);
+            text(sFacts.getName(), 200, 200);
+            text(sFacts.getAge(), 200, 300);
+            text(sFacts.getFacts(), 200, 400);
             noFill();
             noStroke();
         }
@@ -298,6 +325,10 @@ public class UI extends PApplet
             stars.drawStars();
             noStroke();
             p1Info.drawInfo(sunInfo);
+            for(int w = 0; w < sunFacts.size(); w++)
+            {
+                drawSunFacts();
+            }
             if(keyPressed)
             {
                 if (key == 'b' || key == 'B')
@@ -415,10 +446,10 @@ public class UI extends PApplet
             }
         }
 
-        if (checkKey(LEFT))
-        {
-            System.out.println("Left arrow key pressed");
-        }
+        // if (checkKey(LEFT))
+        // {
+        //     System.out.println("Left arrow key pressed");
+        // }
         
     }
 }
