@@ -28,7 +28,7 @@ public class UI extends PApplet
     Rings saturnRing1, saturnRing2, uranusRing;
     int mode, back = 0;
     private ArrayList<Coords> coords = new ArrayList<Coords>();
-    private ArrayList<PlanetFacts> sunFacts = new ArrayList<PlanetFacts>();
+    private ArrayList<PlanetFacts> Facts = new ArrayList<PlanetFacts>();
     AudioPlayer track;
     Minim minim;
     
@@ -166,6 +166,14 @@ public class UI extends PApplet
 
         loadCoords();
         loadSunFacts();
+        loadMercuryFacts();
+        loadVenusFacts();
+        loadEarthFacts();
+        loadMarsFacts();
+        loadJupiterFacts();
+        loadSaturnFacts();
+        loadUranusFacts();
+        loadNeptuneFacts();
 
     }
 
@@ -239,20 +247,21 @@ public class UI extends PApplet
         for (TableRow row : table.rows()) 
         {
             PlanetFacts sFacts = new PlanetFacts(row);
-            sunFacts.add(sFacts);
+            Facts.add(sFacts);
         }
     }
 
     public void drawSunFacts()
     {
-        for(PlanetFacts sFacts : sunFacts)
+        for(PlanetFacts sFacts : Facts)
         {
             stroke(255);
             fill(255);
-            textAlign(CENTER);
-            text(sFacts.getName(), 200, 200);
-            text(sFacts.getAge(), 200, 300);
-            text(sFacts.getFacts(), 200, 400);
+            textSize(20);
+            textAlign(LEFT);
+            text(sFacts.getName(), 100, 150);
+            text(sFacts.getAge(), 100, 230);
+            text(sFacts.getFacts(), 100, 260, 500, 450);
             noFill();
             noStroke();
         }
@@ -325,7 +334,7 @@ public class UI extends PApplet
             stars.drawStars();
             noStroke();
             p1Info.drawInfo(sunInfo);
-            for(int w = 0; w < sunFacts.size(); w++)
+            for(int w = 0; w < Facts.size(); w++)
             {
                 drawSunFacts();
             }
