@@ -31,6 +31,7 @@ public class UI extends PApplet
     private ArrayList<PlanetFacts> FactsS = new ArrayList<PlanetFacts>();
     private ArrayList<PlanetFacts> FactsMY = new ArrayList<PlanetFacts>();
     private ArrayList<PlanetFacts> FactsV = new ArrayList<PlanetFacts>();
+    private ArrayList<PlanetFacts> FactsE = new ArrayList<PlanetFacts>();
     AudioPlayer track;
     Minim minim;
     
@@ -170,7 +171,7 @@ public class UI extends PApplet
         loadSunFacts();
         loadMercuryFacts();
         loadVenusFacts();
-        // loadEarthFacts();
+        loadEarthFacts();
         // loadMarsFacts();
         // loadJupiterFacts();
         // loadSaturnFacts();
@@ -321,6 +322,32 @@ public class UI extends PApplet
         }
     }
 
+    public void loadEarthFacts() 
+    {
+        Table table = loadTable("earth.csv", "header");
+        for (TableRow row : table.rows()) 
+        {
+            PlanetFacts eFacts = new PlanetFacts(row);
+            FactsE.add(eFacts);
+        }
+    }
+
+    public void drawEarthFacts()
+    {
+        for(PlanetFacts eFacts : FactsE)
+        {
+            stroke(255);
+            fill(255);
+            textSize(20);
+            textAlign(LEFT);
+            text(eFacts.getName(), 100, 150);
+            text(eFacts.getAge(), 100, 230);
+            text(eFacts.getFacts(), 100, 260, 500, 450);
+            noFill();
+            noStroke();
+        }
+    }
+
     public void draw()
     {
 
@@ -440,6 +467,10 @@ public class UI extends PApplet
             stars.drawStars();
             noStroke();
             p4Info.drawInfo(earthInfo);
+            for(int w = 0; w < FactsMY.size(); w++)
+            {
+                drawEarthFacts();
+            }
             if(keyPressed)
             {
                 if (key == 'b' || key == 'B')
@@ -453,6 +484,10 @@ public class UI extends PApplet
             stars.drawStars();
             noStroke();
             p5Info.drawInfo(marsInfo);
+            // for(int w = 0; w < FactsMY.size(); w++)
+            // {
+            //     drawMarsFacts();
+            // }
             if(keyPressed)
             {
                 if (key == 'b' || key == 'B')
@@ -466,6 +501,10 @@ public class UI extends PApplet
             stars.drawStars();
             noStroke();
             p6Info.drawInfo(jupiterInfo);
+            // for(int w = 0; w < FactsMY.size(); w++)
+            // {
+            //     drawJupiterFacts();
+            // }
             if(keyPressed)
             {
                 if (key == 'b' || key == 'B')
@@ -481,6 +520,10 @@ public class UI extends PApplet
             p7Info.drawInfo(saturnInfo);
             saturnRing1.drawRings();
             saturnRing2.drawRings();
+            // for(int w = 0; w < FactsMY.size(); w++)
+            // {
+            //     drawSaturnFacts();
+            // }
             if(keyPressed)
             {
                 if (key == 'b' || key == 'B')
@@ -495,6 +538,10 @@ public class UI extends PApplet
             noStroke();
             p8Info.drawInfo(uranusInfo);
             uranusRing.drawRings();
+            // for(int w = 0; w < FactsMY.size(); w++)
+            // {
+            //     drawUranusFacts();
+            // }
             if(keyPressed)
             {
                 if (key == 'b' || key == 'B')
@@ -508,6 +555,10 @@ public class UI extends PApplet
             stars.drawStars();
             noStroke();
             p9Info.drawInfo(neptuneInfo);
+            // for(int w = 0; w < FactsMY.size(); w++)
+            // {
+            //     drawNeptuneFacts();
+            // }
             if(keyPressed)
             {
                 if (key == 'b' || key == 'B')
