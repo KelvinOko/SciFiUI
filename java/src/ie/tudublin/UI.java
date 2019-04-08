@@ -34,6 +34,7 @@ public class UI extends PApplet
     private ArrayList<PlanetFacts> FactsE = new ArrayList<PlanetFacts>();
     private ArrayList<PlanetFacts> FactsMS = new ArrayList<PlanetFacts>();
     private ArrayList<PlanetFacts> FactsJ = new ArrayList<PlanetFacts>();
+    private ArrayList<PlanetFacts> FactsST = new ArrayList<PlanetFacts>();
     AudioPlayer track;
     Minim minim;
     
@@ -176,7 +177,7 @@ public class UI extends PApplet
         loadEarthFacts();
         loadMarsFacts();
         loadJupiterFacts();
-        // loadSaturnFacts();
+        loadSaturnFacts();
         // loadUranusFacts();
         // loadNeptuneFacts();
 
@@ -402,6 +403,32 @@ public class UI extends PApplet
         }
     }
 
+    public void loadSaturnFacts() 
+    {
+        Table table = loadTable("saturn.csv", "header");
+        for (TableRow row : table.rows()) 
+        {
+            PlanetFacts stFacts = new PlanetFacts(row);
+            FactsST.add(stFacts);
+        }
+    }
+
+    public void drawSaturnFacts()
+    {
+        for(PlanetFacts stFacts : FactsST)
+        {
+            stroke(255);
+            fill(255);
+            textSize(20);
+            textAlign(LEFT);
+            text(stFacts.getName(), 100, 150);
+            text(stFacts.getAge(), 100, 230);
+            text(stFacts.getFacts(), 100, 260, 500, 450);
+            noFill();
+            noStroke();
+        }
+    }
+
     public void draw()
     {
 
@@ -574,10 +601,10 @@ public class UI extends PApplet
             p7Info.drawInfo(saturnInfo);
             saturnRing1.drawRings();
             saturnRing2.drawRings();
-            // for(int w = 0; w < FactsMY.size(); w++)
-            // {
-            //     drawSaturnFacts();
-            // }
+            for(int w = 0; w < FactsMY.size(); w++)
+            {
+                drawSaturnFacts();
+            }
             if(keyPressed)
             {
                 if (key == 'b' || key == 'B')
