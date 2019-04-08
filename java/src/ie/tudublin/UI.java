@@ -28,7 +28,9 @@ public class UI extends PApplet
     Rings saturnRing1, saturnRing2, uranusRing;
     int mode, back = 0;
     private ArrayList<Coords> coords = new ArrayList<Coords>();
-    private ArrayList<PlanetFacts> Facts = new ArrayList<PlanetFacts>();
+    private ArrayList<PlanetFacts> FactsS = new ArrayList<PlanetFacts>();
+    private ArrayList<PlanetFacts> FactsMY = new ArrayList<PlanetFacts>();
+    
     AudioPlayer track;
     Minim minim;
     
@@ -167,13 +169,13 @@ public class UI extends PApplet
         loadCoords();
         loadSunFacts();
         loadMercuryFacts();
-        loadVenusFacts();
-        loadEarthFacts();
-        loadMarsFacts();
-        loadJupiterFacts();
-        loadSaturnFacts();
-        loadUranusFacts();
-        loadNeptuneFacts();
+        // loadVenusFacts();
+        // loadEarthFacts();
+        // loadMarsFacts();
+        // loadJupiterFacts();
+        // loadSaturnFacts();
+        // loadUranusFacts();
+        // loadNeptuneFacts();
 
     }
 
@@ -247,13 +249,13 @@ public class UI extends PApplet
         for (TableRow row : table.rows()) 
         {
             PlanetFacts sFacts = new PlanetFacts(row);
-            Facts.add(sFacts);
+            FactsS.add(sFacts);
         }
     }
 
     public void drawSunFacts()
     {
-        for(PlanetFacts sFacts : Facts)
+        for(PlanetFacts sFacts : FactsS)
         {
             stroke(255);
             fill(255);
@@ -262,6 +264,32 @@ public class UI extends PApplet
             text(sFacts.getName(), 100, 150);
             text(sFacts.getAge(), 100, 230);
             text(sFacts.getFacts(), 100, 260, 500, 450);
+            noFill();
+            noStroke();
+        }
+    }
+
+    public void loadMercuryFacts() 
+    {
+        Table table = loadTable("mercury.csv", "header");
+        for (TableRow row : table.rows()) 
+        {
+            PlanetFacts myFacts = new PlanetFacts(row);
+            FactsMY.add(myFacts);
+        }
+    }
+
+    public void drawMercuryFacts()
+    {
+        for(PlanetFacts myFacts : FactsMY)
+        {
+            stroke(255);
+            fill(255);
+            textSize(20);
+            textAlign(LEFT);
+            text(myFacts.getName(), 100, 150);
+            text(myFacts.getAge(), 100, 230);
+            text(myFacts.getFacts(), 100, 260, 500, 450);
             noFill();
             noStroke();
         }
@@ -334,7 +362,7 @@ public class UI extends PApplet
             stars.drawStars();
             noStroke();
             p1Info.drawInfo(sunInfo);
-            for(int w = 0; w < Facts.size(); w++)
+            for(int w = 0; w < FactsS.size(); w++)
             {
                 drawSunFacts();
             }
@@ -352,6 +380,10 @@ public class UI extends PApplet
             stars.drawStars();
             noStroke();
             p2Info.drawInfo(mercuryInfo);
+            for(int w = 0; w < FactsMY.size(); w++)
+            {
+                drawMercuryFacts();
+            }
             if(keyPressed)
             {
                 if (key == 'b' || key == 'B')
