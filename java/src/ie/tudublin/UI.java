@@ -30,7 +30,7 @@ public class UI extends PApplet
     private ArrayList<Coords> coords = new ArrayList<Coords>();
     private ArrayList<PlanetFacts> FactsS = new ArrayList<PlanetFacts>();
     private ArrayList<PlanetFacts> FactsMY = new ArrayList<PlanetFacts>();
-    
+    private ArrayList<PlanetFacts> FactsV = new ArrayList<PlanetFacts>();
     AudioPlayer track;
     Minim minim;
     
@@ -169,7 +169,7 @@ public class UI extends PApplet
         loadCoords();
         loadSunFacts();
         loadMercuryFacts();
-        // loadVenusFacts();
+        loadVenusFacts();
         // loadEarthFacts();
         // loadMarsFacts();
         // loadJupiterFacts();
@@ -295,6 +295,32 @@ public class UI extends PApplet
         }
     }
 
+    public void loadVenusFacts() 
+    {
+        Table table = loadTable("venus.csv", "header");
+        for (TableRow row : table.rows()) 
+        {
+            PlanetFacts vFacts = new PlanetFacts(row);
+            FactsV.add(vFacts);
+        }
+    }
+
+    public void drawVenusFacts()
+    {
+        for(PlanetFacts vFacts : FactsV)
+        {
+            stroke(255);
+            fill(255);
+            textSize(20);
+            textAlign(LEFT);
+            text(vFacts.getName(), 100, 150);
+            text(vFacts.getAge(), 100, 230);
+            text(vFacts.getFacts(), 100, 260, 500, 450);
+            noFill();
+            noStroke();
+        }
+    }
+
     public void draw()
     {
 
@@ -397,6 +423,10 @@ public class UI extends PApplet
             stars.drawStars();
             noStroke();
             p3Info.drawInfo(venusInfo);
+            for(int w = 0; w < FactsMY.size(); w++)
+            {
+                drawVenusFacts();
+            }
             if(keyPressed)
             {
                 if (key == 'b' || key == 'B')
