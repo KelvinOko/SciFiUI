@@ -18,15 +18,6 @@ public class Coords
         this.diameter = row.getFloat("diameter");
     }
 
-    // public void drawCoords()
-    // {
-    //     ui.stroke(255);
-    //     ui.fill(255);
-    //     ui.ellipse(x, y, diameter, diameter);
-    //     ui.noFill();
-    //     ui.noStroke();
-    // }
-
     /**
      * @return the x
      */

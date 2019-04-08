@@ -5,6 +5,8 @@ import processing.core.PApplet;
 import processing.core.PImage;
 import processing.data.Table;
 import processing.data.TableRow;
+import ddf.minim.AudioPlayer;
+import ddf.minim.Minim;
 
 public class UI extends PApplet
 {
@@ -26,6 +28,9 @@ public class UI extends PApplet
     Rings saturnRing1, saturnRing2, uranusRing;
     int mode, back = 0;
     private ArrayList<Coords> coords = new ArrayList<Coords>();
+    AudioPlayer track;
+    Minim minim;
+    // boolean hover = false;
     
     boolean[] keys = new boolean[1024];
 
@@ -55,6 +60,11 @@ public class UI extends PApplet
 
     public void setup()
     {
+        minim = new Minim(this);
+        track = minim.loadFile("spaceship.mp3");
+        track.play();
+        track.loop();
+
         circles.add(new Circles(310, 310, 120, 120, this));
         circles.add(new Circles(310, 310, 168, 168, this));
         circles.add(new Circles(310, 310, 220, 220, this));
@@ -155,7 +165,6 @@ public class UI extends PApplet
         neptuneInfo = p9Info.loadInfo("3dneptune.jpg");
 
         loadCoords();
-        //drawCoords();
 
     }
 
@@ -204,6 +213,7 @@ public class UI extends PApplet
         }
     }
 
+    
     public void drawCoords()
     {
         for(Coords coord : coords)
