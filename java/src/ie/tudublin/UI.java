@@ -470,9 +470,9 @@ public class UI extends PApplet
         if(mode == 0)
         {
             background(0);
-            // stroke(255);
-            // line(200, 300, mouseX, mouseY);
-            // println(mouseX, mouseY);
+            stroke(255);
+            line(200, 300, mouseX, mouseY);
+            println(mouseX, mouseY);
             // println(mode);
 
             for(int c = 0; c < circles.size(); c++)
