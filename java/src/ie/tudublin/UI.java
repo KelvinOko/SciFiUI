@@ -36,31 +36,13 @@ public class UI extends PApplet
     private ArrayList<PlanetFacts> FactsJ = new ArrayList<PlanetFacts>();
     private ArrayList<PlanetFacts> FactsST = new ArrayList<PlanetFacts>();
     private ArrayList<PlanetFacts> FactsU = new ArrayList<PlanetFacts>();
+    private ArrayList<PlanetFacts> FactsN = new ArrayList<PlanetFacts>();
     AudioPlayer track;
     Minim minim;
-    
-    // boolean[] keys = new boolean[1024];
-
-    // public void keyPressed()
-    // {
-    //     keys[keyCode] = true;
-    // }
-    
-    // public void keyReleased()
-    // {
-    //     keys[keyCode] = false;
-    // }
-
-    // public boolean checkKey(int c)
-    // {
-    //     return keys[c] || keys [Character.toUpperCase(c)];
-    // }
 
     public void settings()
     {
-        fullScreen(P3D);   
-        // Use fullscreen instead of size to make your interface fullscreen
-        //fullScreen();
+        fullScreen(P3D);  
     }
 
     
@@ -180,7 +162,7 @@ public class UI extends PApplet
         loadJupiterFacts();
         loadSaturnFacts();
         loadUranusFacts();
-        // loadNeptuneFacts();
+        loadNeptuneFacts();
 
     }
 
@@ -456,6 +438,32 @@ public class UI extends PApplet
         }
     }
 
+    public void loadNeptuneFacts() 
+    {
+        Table table = loadTable("neptune.csv", "header");
+        for (TableRow row : table.rows()) 
+        {
+            PlanetFacts nFacts = new PlanetFacts(row);
+            FactsN.add(nFacts);
+        }
+    }
+
+    public void drawNeptuneFacts()
+    {
+        for(PlanetFacts nFacts : FactsN)
+        {
+            stroke(255);
+            fill(255);
+            textSize(20);
+            textAlign(LEFT);
+            text(nFacts.getName(), 100, 150);
+            text(nFacts.getAge(), 100, 230);
+            text(nFacts.getFacts(), 100, 260, 500, 450);
+            noFill();
+            noStroke();
+        }
+    }
+
     public void draw()
     {
 
@@ -663,10 +671,10 @@ public class UI extends PApplet
             stars.drawStars();
             noStroke();
             p9Info.drawInfo(neptuneInfo);
-            // for(int w = 0; w < FactsMY.size(); w++)
-            // {
-            //     drawNeptuneFacts();
-            // }
+            for(int w = 0; w < FactsMY.size(); w++)
+            {
+                drawNeptuneFacts();
+            }
             if(keyPressed)
             {
                 if (key == 'b' || key == 'B')
@@ -675,11 +683,6 @@ public class UI extends PApplet
                 }
             }
         }
-
-        // if (checkKey(LEFT))
-        // {
-        //     System.out.println("Left arrow key pressed");
-        // }
         
     }
 }
