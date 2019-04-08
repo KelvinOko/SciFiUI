@@ -6,16 +6,28 @@ import processing.data.TableRow;
 public class Coords
 {
     private float x, y, diameter;
-    // private String name;
+    private String name;
     PApplet ui;
 
-    //boolean hover = false;
+    boolean hover = false;
 
     public Coords(TableRow row)
     {
         this.x = row.getFloat("x");
         this.y = row.getFloat("y");
         this.diameter = row.getFloat("diameter");
+        this.name = row.getString("name");
+    }
+
+    public void rollover(float rx, float ry)
+    {
+        float d = ui.dist(rx, ry, x, y);
+        if(d < diameter /2)
+        {
+            hover = true;
+        } else {
+            hover = false;
+        }
     }
 
     /**
@@ -64,6 +76,22 @@ public class Coords
     public void setDiameter(float diameter) 
     {
         this.diameter = diameter;
+    }
+
+    /**
+     * @return the name
+     */
+    public String getName() 
+    {
+        return name;
+    }
+
+    /**
+     * @param name the name to set
+     */
+    public void setName(String name) 
+    {
+        this.name = name;
     }
 
 }

@@ -30,7 +30,6 @@ public class UI extends PApplet
     private ArrayList<Coords> coords = new ArrayList<Coords>();
     AudioPlayer track;
     Minim minim;
-    // boolean hover = false;
     
     boolean[] keys = new boolean[1024];
 
@@ -253,6 +252,11 @@ public class UI extends PApplet
             radar.update();
 
             grid.drawGrid();
+
+            for(int c = 0; c < coords.size(); c++)
+            {
+                coords.get(c).rollover(mouseX, mouseY);
+            }
 
             for(int i = 0; i < planets.size(); i++)
             {
