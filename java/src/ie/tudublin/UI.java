@@ -26,7 +26,8 @@ public class UI extends PApplet
     PImage sunInfo, mercuryInfo, venusInfo, earthInfo, marsInfo, 
     jupiterInfo, saturnInfo, uranusInfo, neptuneInfo;
     Rings saturnRing1, saturnRing2, uranusRing;
-    int mode, back = 0;
+    int mode = -1;
+    int back = 0;
     private ArrayList<Coords> coords = new ArrayList<Coords>();
     private ArrayList<PlanetFacts> FactsS = new ArrayList<PlanetFacts>();
     private ArrayList<PlanetFacts> FactsMY = new ArrayList<PlanetFacts>();
@@ -39,6 +40,8 @@ public class UI extends PApplet
     private ArrayList<PlanetFacts> FactsN = new ArrayList<PlanetFacts>();
     AudioPlayer track;
     Minim minim;
+    boolean start = false;
+    PImage starfield;
 
     public void settings()
     {
@@ -49,6 +52,7 @@ public class UI extends PApplet
 
     public void setup()
     {
+        starfield = loadImage("stars.jpg");
         minim = new Minim(this);
         track = minim.loadFile("spaceship.mp3");
         track.play();
@@ -464,15 +468,41 @@ public class UI extends PApplet
         }
     }
 
+    float bar = 0;
+    public void load()
+    {   
+        float cx = width /2;
+        fill(0, 0, 255);
+        stroke(0);
+        rect(cx -200, height - 150, 400, 50);
+        fill(255);
+        rect(cx - 200, height - 150, bar, 50);
+        if(bar == 400)
+        {
+            bar = 400;
+            fill(0);
+            rect(cx - 200, height - 150, bar, 50);
+            start = true;
+            mode = 0;
+        } else {
+            bar++;
+        }
+
+    }
+
     public void draw()
     {
-
-        if(mode == 0)
+        if(start == false)
+        {
+            background(starfield);
+            load();
+        }
+        else if(mode == 0)
         {
             background(0);
-            stroke(255);
-            line(200, 300, mouseX, mouseY);
-            println(mouseX, mouseY);
+            // stroke(255);
+            // line(200, 300, mouseX, mouseY);
+            // println(mouseX, mouseY);
             // println(mode);
 
             for(int c = 0; c < circles.size(); c++)
