@@ -162,6 +162,8 @@ public class UI extends PApplet
         //loadingScreen
         s = new LoadScreen(150, this);
         sImage = s.load("3dsun.jpg");
+        e = new LoadScreen(75, this);
+        eImage = e.load("3dearth.jpg");
 
         loadCoords();
         loadSunFacts();
@@ -501,10 +503,21 @@ public class UI extends PApplet
         if(start == false)
         {
             background(starfield);
-            noStroke();
-            s.drawInfo(sImage);
             load();
-
+            noStroke();
+            pushMatrix();
+            translate(width/2, height/2, -300);
+            pushMatrix();
+            rotateY(PI * frameCount / 500);
+            s.drawInfo(sImage);
+            popMatrix();
+            pointLight(255,  255,  255,  0,  0,  0);  
+            rotateY(PI * frameCount / 300);
+            translate(0, 0, 270);
+            e.drawInfo(eImage);
+            popMatrix();
+            //noLights();
+            //pointLight(255,  255,  255,  0,  0,  -150);
         }
         else if(mode == 0)
         {
