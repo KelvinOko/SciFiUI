@@ -21,6 +21,8 @@ public class UI extends PApplet
     Images p1, p2, p3, p4, p5, p6, p7, p8, p9;
     PlanetInfo p1Info, p2Info, p3Info, p4Info, p5Info, 
     p6Info, p7Info, p8Info, p9Info;
+    LoadScreen s, e;
+    PImage sImage, eImage;
     PImage sun, mercury, venus, earth, mars, 
     jupiter, saturn, uranus, neptune;
     PImage sunInfo, mercuryInfo, venusInfo, earthInfo, marsInfo, 
@@ -156,6 +158,10 @@ public class UI extends PApplet
         neptune = p9.loadImages("neptune.png");
         p9Info = new PlanetInfo(150, this);
         neptuneInfo = p9Info.loadInfo("3dneptune.jpg");
+
+        //loadingScreen
+        s = new LoadScreen(150, this);
+        sImage = s.load("3dsun.jpg");
 
         loadCoords();
         loadSunFacts();
@@ -495,7 +501,10 @@ public class UI extends PApplet
         if(start == false)
         {
             background(starfield);
+            noStroke();
+            s.drawInfo(sImage);
             load();
+
         }
         else if(mode == 0)
         {
