@@ -60,6 +60,7 @@ public class UI extends PApplet
         track = minim.loadFile("spaceship.mp3");
         track.play();
         track.loop();
+        track.setGain(-15);
 
         circles.add(new Circles(310, 310, 120, 120, this));
         circles.add(new Circles(310, 310, 168, 168, this));
@@ -176,9 +177,7 @@ public class UI extends PApplet
         loadSaturnFacts();
         loadUranusFacts();
         loadNeptuneFacts();
-
     }
-
 
     public void mousePressed()
     {
@@ -188,7 +187,6 @@ public class UI extends PApplet
             mode = 1;
             pTrack = minim.loadFile("sun.mp3");
             pTrack.play();
-            
         }else if((mouseX > 754 && mouseX < 770) && (mouseY > 143 && mouseY < 161))//mercury 
         {
             mode = 2; 
@@ -516,7 +514,6 @@ public class UI extends PApplet
         } else {
             bar++;
         }
-
     }
 
     public void draw()
@@ -618,8 +615,6 @@ public class UI extends PApplet
         }else if(mode == 2)
         {
             background(0);
-            // pTrack = pMinim.loadFile("spaceship.mp3");
-            // pTrack.play();
             stars.drawStars();
             noStroke();
             p2Info.drawInfo(mercuryInfo);
@@ -637,8 +632,6 @@ public class UI extends PApplet
         }else if(mode == 3)
         {
             background(0);
-            // pTrack = pMinim.loadFile("spaceship.mp3");
-            // pTrack.play();
             stars.drawStars();
             noStroke();
             p3Info.drawInfo(venusInfo);
@@ -656,8 +649,6 @@ public class UI extends PApplet
         }else if(mode == 4)
         {
             background(0);
-            // pTrack = pMinim.loadFile("spaceship.mp3");
-            // pTrack.play();
             stars.drawStars();
             noStroke();
             p4Info.drawInfo(earthInfo);
@@ -675,8 +666,6 @@ public class UI extends PApplet
         }else if(mode == 5)
         {
             background(0);
-            // pTrack = pMinim.loadFile("spaceship.mp3");
-            // pTrack.play();
             stars.drawStars();
             noStroke();
             p5Info.drawInfo(marsInfo);
@@ -694,8 +683,6 @@ public class UI extends PApplet
         }else if(mode == 6)
         {
             background(0);
-            // pTrack = pMinim.loadFile("spaceship.mp3");
-            // pTrack.play();
             stars.drawStars();
             noStroke();
             p6Info.drawInfo(jupiterInfo);
@@ -713,8 +700,6 @@ public class UI extends PApplet
         }else if(mode == 7)
         {
             background(0);
-            // pTrack = pMinim.loadFile("spaceship.mp3");
-            // pTrack.play();
             stars.drawStars();
             noStroke();
             p7Info.drawInfo(saturnInfo);
@@ -734,8 +719,6 @@ public class UI extends PApplet
         }else if(mode == 8)
         {
             background(0);
-            // pTrack = pMinim.loadFile("spaceship.mp3");
-            // pTrack.play();
             stars.drawStars();
             noStroke();
             p8Info.drawInfo(uranusInfo);
@@ -754,8 +737,6 @@ public class UI extends PApplet
         }else if(mode == 9)
         {
             background(0);
-            // pTrack = pMinim.loadFile("spaceship.mp3");
-            // pTrack.play();
             stars.drawStars();
             noStroke();
             p9Info.drawInfo(neptuneInfo);
