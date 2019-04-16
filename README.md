@@ -1,8 +1,8 @@
 # SciFi UI Project
 
-Name:
+Name: Kelvin Oko
 
-Student Number: 
+Student Number: C17306113 
 
 Fork this repository and use it a starter project for your assignment
 
@@ -13,6 +13,7 @@ Fork this repository and use it a starter project for your assignment
 # How it works
 
 # What I am most proud of in the assignment
+The 3d planets. They took a lot of work to understand and implement, and turned out better than I expected.
 
 # Markdown Tutorial
 
