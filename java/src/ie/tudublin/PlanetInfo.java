@@ -33,10 +33,25 @@ public class PlanetInfo
         ui.noStroke();
         ui.shape(globe);
         ui.popMatrix();
+    }
+
+    public void drawCInfo(PImage name)
+    {
+        ui.pushMatrix();
+        ui.translate(ui.width - 100, ui.height/1.7f);
+        ui.rotateY(ui.PI * ui.frameCount / 500);
+        globe = ui.createShape(ui.SPHERE, size); 
+        globe.setTexture(planet);
+        ui.noStroke();
+        ui.shape(globe);
+        ui.popMatrix();
+    }
+
+    public void drawBack()
+    {
         ui.stroke(255);
         ui.fill(255);
         ui.textSize(20);
-        // ui.textAlign(CENTER);
         ui.text("Back", 128, 632);
         ui.noFill();
         ui.rect(100, 600, 100, 50);

@@ -21,13 +21,17 @@ public class UI extends PApplet
     Images p1, p2, p3, p4, p5, p6, p7, p8, p9;
     PlanetInfo p1Info, p2Info, p3Info, p4Info, p5Info, 
     p6Info, p7Info, p8Info, p9Info;
+    PlanetInfo p1cInfo, p2cInfo, p3cInfo, p4cInfo, p5cInfo,
+    p6cInfo, p7cInfo, p8cInfo, p9cInfo;
     LoadScreen s, e;
     PImage sImage, eImage;
     PImage sun, mercury, venus, earth, mars, 
     jupiter, saturn, uranus, neptune;
     PImage sunInfo, mercuryInfo, venusInfo, earthInfo, marsInfo, 
     jupiterInfo, saturnInfo, uranusInfo, neptuneInfo;
-    Rings saturnRing1, saturnRing2, uranusRing;
+    PImage suncInfo, mercurycInfo, venuscInfo, earthcInfo, marscInfo, 
+    jupitercInfo, saturncInfo, uranuscInfo, neptunecInfo;
+    Rings saturnRing1, saturnRing2, uranusRing, saturncRing1, saturncRing2, uranuscRing;
     int mode = -1;
     int back = 0;
     private ArrayList<Coords> coords = new ArrayList<Coords>();
@@ -113,53 +117,74 @@ public class UI extends PApplet
 
         saturnRing1 = new Rings(20, 255, 221, 153, 160, 0, 0, 400, 400, this);
         saturnRing2 = new Rings(20, 153, 153, 102, 170, 0, 0, 435, 435, this);
+        saturncRing1 = new Rings(7, 255, 221, 153, 100, 0, 0, 128, 128, this);
+        saturncRing2 = new Rings(7, 153, 153, 102, 110, 0, 0, 145, 145, this);
         uranusRing = new Rings(2, 220, 255, 255, 100, 0, 0, 400, 400, this);
+        uranuscRing = new Rings(2, 220, 255, 255, 100, 0, 0, 135, 135, this);
 
         //the sun
         p1 = new Images(600, 70, 150, 150, this);
         sun = p1.loadImages("sun.png");
         p1Info = new PlanetInfo(150, this);
         sunInfo = p1Info.loadInfo("3dsun.jpg");
+        p1cInfo = new PlanetInfo(50, this);
+        suncInfo = p1cInfo.loadInfo("3dsun.jpg");
         //mercury
         p2 = new Images(750, 140, 24, 24, this);
         mercury = p2.loadImages("mercury.png");
         p2Info = new PlanetInfo(150, this);
         mercuryInfo = p2Info.loadInfo("3dmercury.jpg");
+        p2cInfo = new PlanetInfo(50, this);
+        mercurycInfo = p2cInfo.loadInfo("3dmercury.jpg");
         //venus
         p3 = new Images(790, 137, 30, 30, this);
         venus = p3.loadImages("venus.png");
         p3Info = new PlanetInfo(150, this);
         venusInfo = p3Info.loadInfo("3dvenus.jpg");
+        p3cInfo = new PlanetInfo(50, this);
+        venuscInfo = p3cInfo.loadInfo("3dvenus.jpg");
         //earth
         p4 = new Images(830, 134, 36, 36, this);
         earth = p4.loadImages("earth.png");
         p4Info = new PlanetInfo(150, this);
         earthInfo = p4Info.loadInfo("3dearth.jpg");
+        p4cInfo = new PlanetInfo(50, this);
+        earthcInfo = p4cInfo.loadInfo("3dearth.jpg");
         //mars
         p5 = new Images(875, 138, 26, 26, this);
         mars = p5.loadImages("mars.png");
         p5Info = new PlanetInfo(150, this);
         marsInfo = p5Info.loadInfo("3dmars.jpg");
+        p5cInfo = new PlanetInfo(50, this);
+        marscInfo = p5cInfo.loadInfo("3dmars.jpg");
         //jupiter
         p6 = new Images(923, 105, 90, 90, this);
         jupiter = p6.loadImages("jupiter.png");
         p6Info = new PlanetInfo(150, this);
         jupiterInfo = p6Info.loadInfo("3djupiter.jpg");
+        p6cInfo = new PlanetInfo(50, this);
+        jupitercInfo = p6cInfo.loadInfo("3djupiter.jpg");
         //saturn
         p7 = new Images(1025, 120, 120, 65, this);
         saturn = p7.loadImages("saturn.png");
         p7Info = new PlanetInfo(150, this);
         saturnInfo = p7Info.loadInfo("3dsaturn.jpg");
+        p7cInfo = new PlanetInfo(50, this);
+        saturncInfo = p7cInfo.loadInfo("3dsaturn.jpg");
         //uranus
         p8 = new Images(1150, 130, 44, 44, this);
         uranus = p8.loadImages("uranus.png");
         p8Info = new PlanetInfo(150, this);
         uranusInfo = p8Info.loadInfo("3duranus.jpg");
+        p8cInfo = new PlanetInfo(50, this);
+        uranuscInfo = p8cInfo.loadInfo("3duranus.jpg");
         //neptune
         p9 = new Images(1210, 125, 50, 50, this);
         neptune = p9.loadImages("neptune.png");
         p9Info = new PlanetInfo(150, this);
         neptuneInfo = p9Info.loadInfo("3dneptune.jpg");
+        p9cInfo = new PlanetInfo(50, this);
+        neptunecInfo = p9cInfo.loadInfo("3dneptune.jpg");
 
         //loadingScreen
         s = new LoadScreen(150, this);
@@ -260,6 +285,38 @@ public class UI extends PApplet
               fill(255);
               textAlign(CENTER);
               text(coord.getName(), coord.getX(), coord.getY() + coord.getDiameter()/2 + 20);
+              noStroke();
+              if((mouseX > 950 && mouseX < 956) && (mouseY > 470 && mouseY < 476))//sun
+              {
+                  p1cInfo.drawCInfo(suncInfo);
+              }else if((mouseX > 1000 && mouseX < 1006) && (mouseY > 470 && mouseY < 476))//mercury 
+              {
+                  p2cInfo.drawCInfo(mercurycInfo);
+              }else if((mouseX > 1005 && mouseX < 1011) && (mouseY > 430 && mouseY < 436))//venus
+              {
+                p3cInfo.drawCInfo(venuscInfo);
+              }else if((mouseX > 880 && mouseX < 886) && (mouseY > 405 && mouseY < 411))//earth
+              {
+                p4cInfo.drawCInfo(earthcInfo);
+              }else if((mouseX > 1037 && mouseX < 1043) && (mouseY > 538 && mouseY < 544))//mars
+              {
+                p5cInfo.drawCInfo(marscInfo);
+              }else if((mouseX > 868 && mouseX < 874) && (mouseY > 574 && mouseY < 580))//jupiter
+              {
+                p6cInfo.drawCInfo(jupitercInfo);
+              }else if((mouseX > 1075 && mouseX < 1081) && (mouseY > 387 && mouseY < 393))//saturn
+              {
+                p7cInfo.drawCInfo(saturncInfo);
+                saturncRing1.drawcRings();
+                saturncRing2.drawcRings();
+              }else if((mouseX > 964 && mouseX < 970) && (mouseY > 295 && mouseY < 301))//uranus
+              {
+                p8cInfo.drawCInfo(uranuscInfo);
+                uranuscRing.drawcRings();
+              }else if((mouseX > 750 && mouseX < 756) && (mouseY > 457 && mouseY < 463))//neptune
+              {
+                p9cInfo.drawCInfo(neptunecInfo);
+              }
             }
             noFill();
             noStroke();
@@ -512,7 +569,7 @@ public class UI extends PApplet
         if(bar == 450)
         {
             bar = 450;
-            fill(51, 0, 26);
+            fill(255);
             rect(cx - 220, height - 150, bar, 50);
             start = true;
             mode = 0;
@@ -544,10 +601,6 @@ public class UI extends PApplet
         else if(mode == 0)
         {
             background(0);
-            stroke(255);
-            line(200, 300, mouseX, mouseY);
-            println(mouseX, mouseY);
-            // println(mode);
 
             for(int c = 0; c < circles.size(); c++)
             {
@@ -602,12 +655,10 @@ public class UI extends PApplet
         }else if(mode == 1)
         {
             background(0);
-            stroke(255);
-            line(200, 300, mouseX, mouseY);
-            println(mouseX, mouseY);
             stars.drawStars();
             noStroke();
             p1Info.drawInfo(sunInfo);
+            p1Info.drawBack();
             for(int w = 0; w < FactsS.size(); w++)
             {
                 drawSunFacts();
@@ -626,6 +677,7 @@ public class UI extends PApplet
             stars.drawStars();
             noStroke();
             p2Info.drawInfo(mercuryInfo);
+            p2Info.drawBack();
             for(int w = 0; w < FactsMY.size(); w++)
             {
                 drawMercuryFacts();
@@ -643,6 +695,7 @@ public class UI extends PApplet
             stars.drawStars();
             noStroke();
             p3Info.drawInfo(venusInfo);
+            p3Info.drawBack();
             for(int w = 0; w < FactsMY.size(); w++)
             {
                 drawVenusFacts();
@@ -660,6 +713,7 @@ public class UI extends PApplet
             stars.drawStars();
             noStroke();
             p4Info.drawInfo(earthInfo);
+            p4Info.drawBack();
             for(int w = 0; w < FactsMY.size(); w++)
             {
                 drawEarthFacts();
@@ -677,6 +731,7 @@ public class UI extends PApplet
             stars.drawStars();
             noStroke();
             p5Info.drawInfo(marsInfo);
+            p5Info.drawBack();
             for(int w = 0; w < FactsMY.size(); w++)
             {
                 drawMarsFacts();
@@ -694,6 +749,7 @@ public class UI extends PApplet
             stars.drawStars();
             noStroke();
             p6Info.drawInfo(jupiterInfo);
+            p6Info.drawBack();
             for(int w = 0; w < FactsMY.size(); w++)
             {
                 drawJupiterFacts();
@@ -711,6 +767,7 @@ public class UI extends PApplet
             stars.drawStars();
             noStroke();
             p7Info.drawInfo(saturnInfo);
+            p7Info.drawBack();
             saturnRing1.drawRings();
             saturnRing2.drawRings();
             for(int w = 0; w < FactsMY.size(); w++)
@@ -730,6 +787,7 @@ public class UI extends PApplet
             stars.drawStars();
             noStroke();
             p8Info.drawInfo(uranusInfo);
+            p8Info.drawBack();
             uranusRing.drawRings();
             for(int w = 0; w < FactsMY.size(); w++)
             {
@@ -748,6 +806,7 @@ public class UI extends PApplet
             stars.drawStars();
             noStroke();
             p9Info.drawInfo(neptuneInfo);
+            p9Info.drawBack();
             for(int w = 0; w < FactsMY.size(); w++)
             {
                 drawNeptuneFacts();

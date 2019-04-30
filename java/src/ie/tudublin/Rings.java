@@ -32,4 +32,18 @@ public class Rings extends Super
         ui.popMatrix();
         ui.strokeWeight(1);
     }
+
+    public void drawcRings()
+    {
+        ui.pushMatrix();
+        ui.translate(ui.width - 100, ui.height/1.7f);
+        ui.rotateY(ui.PI * ui.frameCount / 500);
+        ui.stroke(r, g, b, a);
+        ui.strokeWeight(weight);
+        ui.noFill();
+        ui.rotateX((float) (ui.HALF_PI - .45));
+        ui.ellipse(x, y, s1, s2);
+        ui.popMatrix();
+        ui.strokeWeight(1);
+    }
 }
