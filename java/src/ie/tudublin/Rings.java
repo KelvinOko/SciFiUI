@@ -2,20 +2,18 @@ package ie.tudublin;
 
 import processing.core.PApplet;
 
-public class Rings
+public class Rings extends Super
 {
-    float weight, r, g, b, a, x, y, s1, s2;
-    PApplet ui;
+    float weight, r, g, b, a, s1, s2;
 
     public Rings(float weight, float r, float g, float b, float a, float x, float y, float s1, float s2, PApplet ui)
     {
+        super(x, y, ui);
         this.weight = weight;
         this.r = r;
         this.g = g;
         this.b = b;
         this.a = a;
-        this.x = x;
-        this.y = y;
         this.s1 = s1;
         this.s2 = s2;
         this.ui = ui;

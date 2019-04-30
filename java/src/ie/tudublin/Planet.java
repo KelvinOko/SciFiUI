@@ -2,22 +2,18 @@ package ie.tudublin;
 
 import processing.core.PApplet;
 
-public class Planet
+public class Planet extends Super
 {
-    float x;
-    float y;
     float s1;
     float s2;
     float r, g, b;
     float a;
     float rotation;
     float rotateSpeed;
-    PApplet ui;
 
     public Planet(float x, float y, float s1, float s2, float r, float g, float b, float a, float rotateSpeed, PApplet ui)
     {
-        this.x = x;
-        this.y = y;
+        super(x, y, ui);
         this.s1 = s1;
         this.s2 = s2;
         this.r = r;
@@ -25,7 +21,6 @@ public class Planet
         this.b = b;
         this.a = a;
         this.rotateSpeed = rotateSpeed;
-        this.ui = ui;
     }
 
     public void drawPlanet()

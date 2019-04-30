@@ -3,19 +3,16 @@ package ie.tudublin;
 import processing.core.PApplet;
 import processing.core.PImage;
 
-public class Images
+public class Images extends Super
 {
-    float x, y, width, height;
+    float width, height;
     PImage img;
-    PApplet ui;
 
     public Images(float x, float y, float width, float height, PApplet ui)
     {
-        this.x = x;
-        this.y = y;
+        super(x, y, ui);
         this.width = width;
         this.height = height;
-        this.ui = ui;
     }
 
     public PImage loadImages(String name)
