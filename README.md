@@ -15,6 +15,14 @@ At the buttom of each of these pages is a back button that will redirect the use
 The main page also features a graph with coordinates (not accurate) of the planets. When the user hovers over each coordinate, the corrsponding name of the planet will appear underneath the coordinate, while a miniature 3D model of the planet will be displayed on the right side of this graph.
 
 # How it works
+Most of the classes created are basically blueprints for the objects to be created. Radar, circle, lines, planets, addtions, planetlines
+
+A total of 6 classes were needed in order to create the 2D solar system model. The Radar class, as the name suggest, created the radar (outermost circle of the radar and the rotating line) in which everything lies upon. The Circle class was needed to draw the remaining circles within the radar while the lines class created the horizontal and vertical lines within the radar. The Planets class drew the 2D planets on the radar. The Planets class is also responsible for orbiting each planet around the sun at their own sepa the planets 
+
+
+The Additions class assits in the creation of the 2D solar system model, by drawing the earth/clouds on the 2D earth model and the multiple lines on the 2D jupiter model.
+I created the a Circle class to draw circles wherever & whenever needed, they are used to draw the decreasing circles inside my radar.
+The Coords was created to load the coords file with it's contents used in the making of the coordinate graph. The grid class created the graph used for the coordinates. 
 
 # What I am most proud of in the assignment
 I'm really proud of the fact that I've been able to create what I consider to be a stepping stone to advancing our knowledge of the solar system and it's constituents. With this UI, people are able to gain more knowledge and possibly acquire further insights into the gravitationally bound planetary system we know and call the solar system.
