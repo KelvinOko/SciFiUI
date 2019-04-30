@@ -1,18 +1,22 @@
 # SciFi UI Project
 
-Name:
+Name: Kelvin Oko
 
-Student Number: 
+Student Number: C17306113 
 
 Fork this repository and use it a starter project for your assignment
 
 # Description of the assignment
+This assignment is based off the idea of a planetarium. I created it as a fun/interactive way to learn more about our solar system and the planets in it.
 
 # Instructions
+It starts of with a loading screen, which when finished will redirect the user to the main screen. The main screen features a 2D model of the solar system, with the planets orbiting the sun. To the right of that model are a series of interactive pictures of the sun and each planet. When you click on any of these pictures, the user will be taken to another screen, showing a 3D model of the corresponding planet rotating on it's y-axis. In this separate screen will also feature some information about the corresponding planet.
+At the buttom of each of these pages is a back button that will redirect the user back to the main page.
 
 # How it works
 
 # What I am most proud of in the assignment
+The 3D planets. They took a lot of work to understand and implement, and turned out better than I expected.
 
 # Markdown Tutorial
 
