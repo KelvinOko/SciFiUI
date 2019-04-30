@@ -33,5 +33,13 @@ public class PlanetInfo
         ui.noStroke();
         ui.shape(globe);
         ui.popMatrix();
+        ui.stroke(255);
+        ui.fill(255);
+        ui.textSize(20);
+        // ui.textAlign(CENTER);
+        ui.text("Back", 128, 632);
+        ui.noFill();
+        ui.rect(100, 600, 100, 50);
+        ui.noStroke();
     }
 }

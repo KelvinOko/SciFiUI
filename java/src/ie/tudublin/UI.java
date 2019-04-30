@@ -228,6 +228,11 @@ public class UI extends PApplet
             pTrack = minim.loadFile("neptune.mp3");
             pTrack.play();
         }
+
+        if((mode == 1 || mode == 2 || mode == 3 || mode == 4 || mode == 5 || mode == 6 || mode == 7 || mode == 8 || mode == 9) && (mouseX > 100 && mouseX < 200) && (mouseY > 600 && mouseY < 650))
+            {
+                mode = 0;
+            }
     }
 
 
@@ -539,9 +544,9 @@ public class UI extends PApplet
         else if(mode == 0)
         {
             background(0);
-            // stroke(255);
-            // line(200, 300, mouseX, mouseY);
-            // println(mouseX, mouseY);
+            stroke(255);
+            line(200, 300, mouseX, mouseY);
+            println(mouseX, mouseY);
             // println(mode);
 
             for(int c = 0; c < circles.size(); c++)
@@ -597,6 +602,9 @@ public class UI extends PApplet
         }else if(mode == 1)
         {
             background(0);
+            stroke(255);
+            line(200, 300, mouseX, mouseY);
+            println(mouseX, mouseY);
             stars.drawStars();
             noStroke();
             p1Info.drawInfo(sunInfo);
