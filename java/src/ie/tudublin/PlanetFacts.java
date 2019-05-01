@@ -32,7 +32,7 @@ public class PlanetFacts
     }
 
     /**
-     * @return the name
+     * @return the age
      */
     public String getAge() 
     {
@@ -40,7 +40,7 @@ public class PlanetFacts
     }
 
     /**
-     * @param name the name to set
+     * @param name the age to set
      */
     public void setAge(String age) 
     {
@@ -48,7 +48,7 @@ public class PlanetFacts
     }
 
     /**
-     * @return the name
+     * @return the facts
      */
     public String getFacts() 
     {
@@ -56,7 +56,7 @@ public class PlanetFacts
     }
 
     /**
-     * @param name the name to set
+     * @param name the facts to set
      */
     public void setFacts(String facts) 
     {

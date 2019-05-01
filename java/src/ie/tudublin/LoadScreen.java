@@ -4,7 +4,7 @@ import processing.core.PApplet;
 import processing.core.PImage;
 import processing.core.PShape;
 
-public class LoadScreen
+public class LoadScreen //extends UI
 {
     PImage planet;
     PShape globe;
