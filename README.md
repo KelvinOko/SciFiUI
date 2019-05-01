@@ -49,8 +49,7 @@ This is a link to my youtube video:
 
 # CSV Files
 
-#Coords.csv
-
+# Coords.csv
 | x | y | diameter | name |
 |---|---|----------|------|
 |954|474|6|sun|
@@ -62,4 +61,10 @@ This is a link to my youtube video:
 |1078|390|6|saturn|
 |967|298|6|uranus|
 |754|461|6|neptune|
+
+# Sun.csv
+| Name: | Age: | Interesting Facts: |
+|-------|------|--------------------|
+|The Sun|4.603 billion years old|The sun lies at the heart of the solar system, where it is by far the largest object. It holds 99.8 percent of the solar system's mass and is roughly 109 times the diameter of the Earth — about one million Earths could fit inside the sun|
+
 
