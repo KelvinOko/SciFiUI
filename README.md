@@ -67,4 +67,42 @@ This is a link to my youtube video:
 |-------|------|--------------------|
 |The Sun|4.603 billion years old|The sun lies at the heart of the solar system, where it is by far the largest object. It holds 99.8 percent of the solar system's mass and is roughly 109 times the diameter of the Earth — about one million Earths could fit inside the sun|
 
+# Mercury.csv
+| Name: | Age: | Interesting Facts: |
+|-------|------|--------------------|
+|Mercury|4.5 billion years old|Mercury is the closest planet to the Sun and is also the smallest of the eight planets in our solar system. It is named for the Roman god Mercury, the messenger to the gods – most likely related to the orbiting speed of the planet|
 
+# Venus.csv
+| Name: | Age: | Interesting Facts: |
+|-------|------|--------------------|
+|Venus|4.5 billion years old|Venus is the second planet from the Sun and the third brightest object in Earth's sky after the Sun and Moon. The planet is named for Venus, the Roman goddess of love and beauty|
+
+# Earth.csv
+| Name: | Age: | Interesting Facts: |
+|-------|------|--------------------|
+|Earth|4.54 billion years old|Earth is the third planet from the Sun and largest of the terrestrial planets. A year on Earth lasts just over 365 days. It is actually 1/4 of a day over 365 days which is why we have a leap year every four years|
+
+# Mars.csv
+| Name: | Age: | Interesting Facts: |
+|-------|------|--------------------|
+|Mars|4.6 billion years old|Mars is the fourth planet from the Sun, named after Mars, the Roman god of war. Mars is the only other planet besides Earth that has polar ice caps. The northern cap is called the Planum Boreum, with Planum Australe in the south|
+
+# Jupiter.csv
+| Name: | Age: | Interesting Facts: |
+|-------|------|--------------------|
+|Jupiter|4.5 billion years old|Named after the Roman king of the gods, Jupiter is fitting of its name. Jupiter is easily the largest planet in the Solar System. To put this in perspective, it would take 11 Earths lined up next to each other to stretch from one side of Jupiter to the other and it would take 317 Earths to equal the mass of Jupiter|
+
+# Saturn.csv
+| Name: | Age: | Interesting Facts: |
+|-------|------|--------------------|
+|Saturn|4.5 billion years old|Saturn, named after the father of the god Jupiter in Roman mythology, is the sixth planet from the Sun and second largest planet of the Solar System in terms of diameter and mass|
+
+# Uranus.csv
+| Name: | Age: | Interesting Facts: |
+|-------|------|--------------------|
+|Uranus|4.5 billion years old|Uranus, named after the the father of the Roman god Saturn, is the seventh planet in the Solar System and third of the gas giants. It is the third largest planet by diameter, yet fourth most massive|
+
+# Neptune.csv
+| Name: | Age: | Interesting Facts: |
+|-------|------|--------------------|
+|Neptune|4.5 billion years old|Neptune is the eighth planet from the Sun and last of the known planets. While it is the third largest planet with respect to mass, it is only the fourth largest in terms of diameter. Due to its blue coloration, Neptune was named after the Roman god of the Sea|
