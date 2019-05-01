@@ -40,7 +40,14 @@ I'm really proud of the fact that I've been able to create what I consider to be
 
 # Images
 
+# Loading Screen
+![Loading Screen](https://github.com/KelvinOko/SciFiUI/blob/master/images/loadingScreen.JPG)
 
+# Main Screen
+![Main Screen](https://github.com/KelvinOko/SciFiUI/blob/master/images/main.JPG)
+
+# Sample Planet Information Screen
+![Info Screen](https://github.com/KelvinOko/SciFiUI/blob/master/images/mercury.JPG)
 
 
 This is a link to my youtube video:
