@@ -39,8 +39,7 @@ The LoadScreen class had the responsibility of creating the loading screen by lo
 I'm really proud of the fact that I've been able to create what I consider to be a stepping stone to advancing our knowledge of the solar system and it's constituents. With this UI, people are able to gain more knowledge and possibly acquire further insights into the gravitationally bound planetary system we know and call the solar system. Coding wise, I was really happy with the way the 3D model of the planets turned out. It wasn't easy to implement but turned out to work well and it proved to be really useful for this assignment.
 
 # Images
-
-https://github.com/KelvinOko/SciFiUI/blob/master/images/loadingScreen.JPG
+![A different image](https://github.com/KelvinOko/SciFiUI/blob/master/images/loadingScreen.JPG)
 
 
 This is a link to my youtube video:
