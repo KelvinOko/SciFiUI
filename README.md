@@ -17,12 +17,13 @@ The main page also features a graph with coordinates (not accurate) of the plane
 # How it works
 Most of the classes created are basically blueprints for the objects to be created. Radar, circle, lines, planets, addtions, planetlines
 
-A total of 6 classes were needed in order to create the 2D solar system model. The Radar class, as the name suggest, created the radar (outermost circle of the radar and the rotating line) in which everything lies upon. The Circle class was needed to draw the remaining circles within the radar while the lines class created the horizontal and vertical lines within the radar. The Planets class drew the 2D planets on the radar. The Planets class is also responsible for orbiting each planet around the sun at their own sepa the planets 
 
+A total of 6 classes were needed in order to create the 2D solar system model. The Radar class, as the name suggest, created the radar (outermost circle of the radar and the rotating line) in which everything lies upon. The Circle class was needed to draw the remaining circles within the radar while the lines class created the horizontal and vertical lines within the radar. The Planets class drew the 2D planets on the radar. The Planets class is also responsible for orbiting each planet around the sun with their own individual speeds. I made the Additions class to draw the land & clouds on the 2D model of the earth on the radar. Lastly the PlanetLines class drew and rotated the lines on the 2D model of jupiter on the radar as well as the rings around saturn and uranus.
 
-The Additions class assits in the creation of the 2D solar system model, by drawing the earth/clouds on the 2D earth model and the multiple lines on the 2D jupiter model.
-I created the a Circle class to draw circles wherever & whenever needed, they are used to draw the decreasing circles inside my radar.
-The Coords was created to load the coords file with it's contents used in the making of the coordinate graph. The grid class created the graph used for the coordinates. 
+The graph was created and implemented using 3 classes. The Grid class was used to draw out the actual grid. The Coords class was created to load the coords file with it's contents used in the plotting of the coordinates on the graph. Inside the Coords class is code for a hover function which was used to display the name & the corresponding miniature 3D model of each planet when you hover over the corrsponding coordinate on the graph. In order to generate these miniature 3D models, I created the PlanetInfo class. This class is responsible for creating 3D spheres and loading & wrapping different planet textures around each sphere to create a different planet
+
+In order to create the series of interactive pictures at the top, I created an Images class to firstly display the pictures.
+
 
 # What I am most proud of in the assignment
 I'm really proud of the fact that I've been able to create what I consider to be a stepping stone to advancing our knowledge of the solar system and it's constituents. With this UI, people are able to gain more knowledge and possibly acquire further insights into the gravitationally bound planetary system we know and call the solar system.
