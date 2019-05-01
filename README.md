@@ -49,6 +49,8 @@ This is a link to my youtube video:
 
 # CSV Files
 
+#Coords.csv
+
 | x | y | diameter | name |
 |---|---|----------|------|
 |954|474|6|sun|
